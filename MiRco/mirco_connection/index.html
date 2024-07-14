@@ -1,0 +1,1003 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../mirco_interface/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Connect to MiRco - MiRco documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#connect-to-mirco" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MiRco documentation" class="md-header__button md-logo" aria-label="MiRco documentation" data-md-component="logo">
+      
+  <img src="../../img/robolab_crop.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiRco documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Connect to MiRco
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MiRco documentation" class="md-nav__button md-logo" aria-label="MiRco documentation" data-md-component="logo">
+      
+  <img src="../../img/robolab_crop.png" alt="logo">
+
+    </a>
+    MiRco documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MiRco
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            MiRco
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Connect to MiRco
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Connect to MiRco
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-start-mirco" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Start MiRco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Start MiRco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-pre-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Pre-checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-ur5e-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 UR5e settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-mir100-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 MiR100 settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-connecting-to-mirco" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Connecting to MiRco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Connecting to MiRco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-connect-to-the-mirco-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Connect to the MiRco computer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-enabling-and-disabling-headless-remote-desktop-on-the-mirco-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Enabling and disabling headless remote desktop on the MiRco computer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-development-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Development tips
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirco_interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MiRco system interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirco_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MiRco control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MiR100
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            MiR100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiR100/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiR100/mir_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting MiR100
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiR100/mir_connection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connect to MiR100
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiR100/mir_web_interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiR100/mir_web_interface_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web interface control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiR100/mir_ros_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UR5e & Robotiq 2F-85
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UR5e & Robotiq 2F-85
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UR5e_2F85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-start-mirco" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Start MiRco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Start MiRco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-pre-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Pre-checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-ur5e-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 UR5e settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-mir100-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 MiR100 settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-connecting-to-mirco" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Connecting to MiRco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Connecting to MiRco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-connect-to-the-mirco-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Connect to the MiRco computer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-enabling-and-disabling-headless-remote-desktop-on-the-mirco-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Enabling and disabling headless remote desktop on the MiRco computer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-development-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Development tips
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="connect-to-mirco">Connect to MiRco</h1>
+<h2 id="1-start-mirco">1. Start MiRco</h2>
+<p>TODO: add pictures</p>
+<h3 id="11-pre-checks">1.1 Pre-checks</h3>
+<p>Before turning on the power, make sure that:</p>
+<ul>
+<li>MiRco battery has enough charge. If not, you can plug in the cable for direct power. You can check battery status with the button on the charge controller. </li>
+<li>MiR100 battery has enough charge. Check by plugging in the charger. LED lights on the charger will indicate battery status. <a href="TODO">See MiR charging instructions (TODO)</a>.</li>
+<li>The white Ethernet cable from the MiRco computer is connected to the UR5e controller.</li>
+<li>UR5e controller is using the right memory stick. This is important because URCaps conflicts can impede gripper control.  </li>
+</ul>
+<h3 id="12-power">1.2 Power</h3>
+<ul>
+<li>turn on the <code>MiRco</code> battery switch. Wait for the double audio signal</li>
+<li>turn on <code>MiRco</code> computer</li>
+<li>turn on <code>MiR100</code>: blue button on the front right corner</li>
+<li>turn on <code>UR5e</code> on the teach pendant</li>
+</ul>
+<h3 id="13-ur5e-settings">1.3 UR5e settings</h3>
+<p>Go to <code>Settings -&gt; System -&gt; Network</code> and make sure the network settings are correct. This is the <code>UR5e</code> IP address that the <code>MiRco</code> computer uses to control the arm.</p>
+<div class="highlight"><pre><span></span><code>IP<span class="w"> </span>address:<span class="w"> </span><span class="m">192</span>.168.77.245
+Subnet<span class="w"> </span>mask:<span class="w"> </span><span class="m">255</span>.255.255.0
+</code></pre></div>
+<p>Go to <code>Installation -&gt; URCaps -&gt; External control</code> and make sure the network settings are correct. This is the <code>MiRco</code> computer IP address so that <code>UR5e</code> knows where the control is comming from.</p>
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>IP:<span class="w"> </span><span class="m">192</span>.168.77.240
+Custom<span class="w"> </span>port:<span class="w"> </span><span class="m">50002</span>
+Host<span class="w"> </span>name:<span class="w"> </span><span class="m">192</span>.168.77.240s
+</code></pre></div>
+<h3 id="14-mir100-settings">1.4 MiR100 settings</h3>
+<p><code>MiR100</code> internal clock is prone to desynchronization. <a href="../../MiR100/mir_connection/">Connect</a> to the MiR web interface and go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Load from device and save changes.</p>
+<h2 id="2-connecting-to-mirco">2. Connecting to MiRco</h2>
+<h3 id="21-connect-to-the-mirco-computer">2.1 Connect to the MiRco computer</h3>
+<p><code>MirCo</code> is connected to the lab network however it does not have a static <code>MiRco_IP</code> (for now).</p>
+<h4 id="211-if-you-know-mirco_ip">2.1.1 If you know <code>MiRco_IP</code></h4>
+<ul>
+<li><strong>Ssh</strong>: <code>ssh student@MiRco_IP</code> and sign in.</li>
+<li><strong>Remote desktop</strong>: Use NoMachine. When turning on the MiRco computer/your instance of NoMachine, it can take a couple of minutes for MiRco computer to show up under network devices. If you know <code>MiRco_IP</code> you don't need to wait. See <a href="#22-enabling-and-disabling-headless-remote-desktop-on-the-mirco-computer">this</a> about enabling/disabling remote desktop.</li>
+<li><strong>Connect a display, computer and mouse directly to the computer</strong>. See <a href="#22-enabling-and-disabling-headless-remote-desktop-on-the-mirco-computer">this</a> about enabling/disabling remote desktop. </li>
+</ul>
+<h4 id="211-if-you-dont-know-mirco_ip">2.1.1 If you don't know <code>MiRco_IP</code></h4>
+<p>Connect to the computer over remote desktop or plug in a display. When connected, open the terminal and look up <code>MiRco_IP</code> with <code>ifconfig</code>.</p>
+<h4 id="222-troubleshooting">2.2.2 Troubleshooting</h4>
+<p>If you can't connect remotely to <code>MiRco</code>, but the robot is in <a href="#22-enabling-and-disabling-headless-remote-desktop-on-the-mirco-computer">headless remote desktop mode</a>:</p>
+<ul>
+<li>plugin in a display and keyboard</li>
+<li>restart the computer</li>
+<li>boot into a root terminal. When the boot menu comes up: Advanced options for <code>Ubuntu -&gt; Ubuntu (recovery mode) -&gt; root</code></li>
+<li>delete file <code>/etc/X11/xorg.conf</code></li>
+<li>restart the computer</li>
+</ul>
+<p>This disables the headless remote desktop mode. From here you can lookup <code>MiRco_IP</code> and proceed accordingly.</p>
+<h3 id="22-enabling-and-disabling-headless-remote-desktop-on-the-mirco-computer">2.2 Enabling and disabling headless remote desktop on the MiRco computer</h3>
+<p>Remote desktop does not work if no monitor devices are plugged in the computer. 
+A workaround are two scripts located in <code>~/.local/bin</code>.
+This does not affect <code>ssh</code> connections.</p>
+<ul>
+<li><code>display_headless.sh</code>: creates a X11 config file that enables headless remote desktop. In headless mode there is no display output even if a display is connected to the computer. <strong>A logout is required.</strong></li>
+<li><code>display_monitor.sh</code>: removes the X11 config file. You can connect a display but if you remove it, remote desktop will not work.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#enable headless remote desktop</span>
+~/.local/bin/display_headless.sh
+
+<span class="c1">#disable headless remote desktop</span>
+~/.local/bin/display_monitor.sh
+</code></pre></div>
+<h2 id="3-development-tips">3. Development tips</h2>
+<ul>
+<li>Connection over remote desktop will always be lacking. Use it only when visual tools like <code>RViz</code> are needed. When possible connect to the robot over <code>ssh</code>. </li>
+<li>When writing or testing code on MiRco, use the <code>Remote-SSH</code> extension for <code>VSCodium/VSCode</code>. It enables you to remotely access files on the MiRco computer within your development environment. There is no lag issue like with remote desktop and the robot is still free to move (as opposed to connecting a monitor to MiRco).</li>
+<li>If you are using a Docker installation on your robot, use the <code>Dev Containers</code> extension for <code>VSCode</code>. It enables you to access container files within your development environment. If you use it in combination with the <code>Remote-SSH</code> extension, you can access files within a container running on your robot computer. This extension is only available for <code>VSCode</code> and not for <code>VSCodium</code>. </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
