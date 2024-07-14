@@ -1,0 +1,32 @@
+site_name: MiRco documentation
+nav:
+  - Documentation overview: index.md
+  - Installation: installation.md
+  - File structure: file_structure.md
+  - MiRco:
+    - Overview: MiRco/index.md
+    - Connect to MiRco: MiRco/mirco_connection.md
+    - MiRco system interface: MiRco/mirco_interface.md
+    - MiRco control: MiRco/mirco_control.md
+  - MiR100:
+    - MiR100/index.md
+    - Starting MiR100: MiR100/mir_start.md
+    - Connect to MiR100: MiR100/mir_connection.md
+    - Web interface: MiR100/mir_web_interface.md
+    - Web interface control: MiR100/mir_web_interface_control.md
+    - ROS control: MiR100/mir_ros_control.md
+  - UR5e & Robotiq 2F-85:
+    - UR5e_2F85/index.md
+theme:
+  name: material
+  logo: img/robolab_crop.png
+  palette:
+    primary: black
+    accent: blue
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      toc_depth: 3
+
