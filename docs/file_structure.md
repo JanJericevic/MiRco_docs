@@ -1,25 +1,23 @@
 # File structure
-This page describes the file structure on the `MiRco` computer. It describes the core files that enable `MiRco` ROS control.
+This page describes the file structure on the `MiRco PC`. It describes the core files that enable `MiRco` ROS control.
 
-Files are organized in a ROS `catkin` workspace. If you are not familiar, [ROS concepts](http://wiki.ros.org/ROS/Concepts) and [catkin workspaces](http://wiki.ros.org/catkin/workspaces) of the official ROS documentation are a good place to start. For a new project/application create a package within the `src` directory or create a new workspace and source both the new and `MiRco` workspaces.
+Files are organized in a ROS `catkin` workspace. If you are not familiar, [ROS concepts](http://wiki.ros.org/ROS/Concepts) and [catkin workspaces](http://wiki.ros.org/catkin/workspaces) of the official ROS documentation are a good place to start. For a new project/application create a package within the `src` directory or create a new workspace and source both the new and `MiRco_ws` workspaces.
 
 ```bash
 MiRco_ws/src
 ├── CMakeLists.txt                  # main CMakeLists file
 ├── MiRco_robot                     
-│   ├── convenience_scripts         # TODO delete
 │   ├── Dockerfile                  # Docker file, see installation for info
-│   ├── mir_analysis                # TODO delete   
 │   ├── mirco_description           # MiRco unified URDF
-│   ├── mirco_moveit_config         # MiRco MoveIt config
-│   ├── mir_control                 # MiR100 control node, services, driver launch
-│   ├── mirco_robot                 # main launch files, main app
+│   ├── mirco_moveit_config         # MiRco MoveIt config and launch files
+│   ├── mir_control                 # MiR100 main control, launch files
+│   ├── mirco_robot                 # MiRco main control, launch files
 │   ├── mir_joy_teleop              # MiR100 joystick control
-│   ├── mir_rest_api                # MiR100 REST API package
+│   ├── mir_rest_api                # MiR100 REST API
 │   ├── README.md
-│   ├── ur5e_2f85                   # Arm & gripper control node, launch files, services
-│   ├── ur5e_2f85_description       # Arm & gripper URDF
-│   └── ur5e_2f85_moveit_config     # Arm & gripper MoveIt config
+│   ├── ur5e_2f85                   # Arm & gripper main control, launch files
+│   ├── ur5e_2f85_description       # Arm & gripper unified URDF
+│   └── ur5e_2f85_moveit_config     # Arm & gripper MoveIt config and launch files
 ├── mir_robot                       # MiR100 ROS driver
 │   ├── Dockerfile-noetic
 │   ├── LICENSE

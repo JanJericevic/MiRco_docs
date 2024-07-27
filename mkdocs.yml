@@ -4,29 +4,54 @@ nav:
   - Installation: installation.md
   - File structure: file_structure.md
   - MiRco:
-    - Overview: MiRco/index.md
+    - Overview: MiRco/mirco_overview.md
+    - MiRco interface: MiRco/mirco_interface.md
+    - Starting MiRco: MiRco/mirco_start.md
     - Connect to MiRco: MiRco/mirco_connection.md
-    - MiRco system interface: MiRco/mirco_interface.md
-    - MiRco control: MiRco/mirco_control.md
+    - Industrial control: MiRco/mirco_industrial_control.md
+    - ROS control: MiRco/mirco_ros_control.md
   - MiR100:
-    - MiR100/index.md
+    - Overview: MiR100/mir_overview.md
     - Starting MiR100: MiR100/mir_start.md
     - Connect to MiR100: MiR100/mir_connection.md
     - Web interface: MiR100/mir_web_interface.md
-    - Web interface control: MiR100/mir_web_interface_control.md
     - ROS control: MiR100/mir_ros_control.md
+    - REST API: MiR100/mir_rest_api.md
+    - Glossary: MiR100/mir_glossary.md
   - UR5e & Robotiq 2F-85:
-    - UR5e_2F85/index.md
+    - Overview: UR5e_2F85/ur_2f85_overview.md
+    - Starting UR5e & Robotiq 2F-85: UR5e_2F85/ur_2f85_start.md
+    - ROS control: UR5e_2F85/ur_2f85_ros_control.md
+
 theme:
   name: material
   logo: img/robolab_crop.png
   palette:
     primary: black
-    accent: blue
+  features:
+    - navigation.path
+    - navigation.sections
+    - navigation.footer
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - toc:
       toc_depth: 3
+plugins:
+- search
+- mkdocstrings:
+    enabled: true
+    handlers:
+        python:
+          paths: [docs/MiR100/mir_rest_api]
+          options:
+            docstring_style: sphinx
+
+extra_css: 
+  - stylesheets/extra.css
+
 

@@ -20,7 +20,7 @@ You can connect to the web interface over its hotspot or the [outside network](#
 
 !!! warning
     MiR100 internal clock is prone to desynchronization which can mess with the robot control.  
-    First thing you have to do after you connect to the MiR web interface is go to `System -> Settings -> Date & Time` and synchronize the internal clock. Click "load from device" and "Save changes".
+    First thing you have to do after you connect to the MiR web interface is go to `System -> Settings -> Date & Time` and synchronize the internal clock. Click `Load from device` and `Save changes`.
 
 
 
@@ -62,8 +62,8 @@ twist:
     z: 0.2"
 ```
 
-### Using mir_control
-Using `mir_control` you can establish a ROS connection over MiR100 hotspot or the [outside network](#connect-mir100-to-a-wifi-network) it is connected to.
+### mir_control package
+Using `mir_control` you can establish a ROS connection over the MiR100 hotspot or the [outside network](#connect-mir100-to-a-wifi-network) MiR100 is connected to.
 
 #### Hotspot
 If you are connected to the MiR_R**** hotspot:
@@ -93,11 +93,11 @@ angular:
 ```
 
 #### Outside network
-If you are connected to the same outside network:
+If you are connected to the same outside network as MiR100:
 
 ```bash
 # launch mir_control
-roslaunch mir_control mir_control.launch mir_hostname:=<MiR100_IP>
+roslaunch mir_control mir_control.launch mir_ip:=<MiR100_IP>
 ```
 Terminal output will hang for a bit on "ROS bridge connected" message.  
 Wait until "MiR100: ..." messages finish, then continue.
@@ -120,14 +120,14 @@ angular:
 
 !!! note
     
-    When using `mir_control` to connect to the robot we send `geometry_msgs/Twist` type messages instead of `geometry_msgs/TwistStamped` to the `/cmd_vel` topic. That is because the `mir_driver` package expects messages of type `geometry_msgs/Twist` on the `/cmd_vel` topic and converts them to `geometry_msgs/TwistStamped` messages before sending the commands to the robot.
+    When using `mir_control` we send `geometry_msgs/Twist` type messages instead of `geometry_msgs/TwistStamped` to the `/cmd_vel` topic. That is because the `mir_driver` package expects messages of type `geometry_msgs/Twist` on the `/cmd_vel` topic and converts them to `geometry_msgs/TwistStamped` messages before sending the commands to the robot.
 
 ## Connect MiR100 to a WiFi network
 You can connect the robot to an outside network:
 
 - connect to the MiR_R**** hotspot
-- go to `System -> Settings -> WiFi`
+- in the web interface go to `System -> Settings -> WiFi`
 - select "Add connection"
 - select the network and fill in required information
 - when you're finished select "Add connection"
-- `MiR100_IP` is displayed under the network connection details. You can use this IP to access the web interface or when using `mir_driver`
+- `MiR100_IP` is displayed under the network connection details. You can use this IP to access the web interface or when using `mir_control`

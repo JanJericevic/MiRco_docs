@@ -1,1 +1,0 @@
-**NOTE: this documentation is currently under development.**
