@@ -12,7 +12,7 @@
         <link rel="prev" href="../mir_connection/">
       
       
-        <link rel="next" href="../mir_web_interface_control/">
+        <link rel="next" href="../mir_ros_control/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -46,6 +46,10 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,7 +65,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -259,15 +263,20 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -292,11 +301,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MiRco/" class="md-nav__link">
+      <a href="../../MiRco/mirco_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiRco/mirco_interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MiRco interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MiRco/mirco_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting MiRco
   </span>
   
 
@@ -334,11 +385,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MiRco/mirco_interface/" class="md-nav__link">
+      <a href="../../MiRco/mirco_industrial_control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    MiRco system interface
+    Industrial control
   </span>
   
 
@@ -355,11 +406,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MiRco/mirco_control/" class="md-nav__link">
+      <a href="../../MiRco/mirco_ros_control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    MiRco control
+    ROS control
   </span>
   
 
@@ -387,15 +438,20 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -420,11 +476,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../mir_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Index
+    Overview
   </span>
   
 
@@ -529,39 +585,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connect-to-the-web-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect to the web interface
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connect to the web interface">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hotspot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hotspot
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#outside-network" class="md-nav__link">
-    <span class="md-ellipsis">
-      Outside network
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#interface-overview" class="md-nav__link">
     <span class="md-ellipsis">
       Interface overview
@@ -605,45 +628,78 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dashboards" class="md-nav__link">
+  <a href="#dashboards-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Dashboards
+      Dashboards menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#setup-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      Setup menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
+  <a href="#monitoring-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Monitoring
+      Monitoring menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#system" class="md-nav__link">
+  <a href="#system-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      System
+      System menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
+  <a href="#help-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Help
+      Help menu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-the-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control the robot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control the robot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-to-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send to goal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual control
     </span>
   </a>
   
@@ -670,11 +726,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../mir_web_interface_control/" class="md-nav__link">
+      <a href="../mir_ros_control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Web interface control
+    ROS control
   </span>
   
 
@@ -691,11 +747,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../mir_ros_control/" class="md-nav__link">
+      <a href="../mir_rest_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    ROS control
+    REST API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mir_glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
   </span>
   
 
@@ -721,15 +798,20 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -754,11 +836,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../UR5e_2F85/" class="md-nav__link">
+      <a href="../../UR5e_2F85/ur_2f85_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Index
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UR5e_2F85/ur_2f85_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting UR5e & Robotiq 2F-85
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UR5e_2F85/ur_2f85_ros_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS control
   </span>
   
 
@@ -802,39 +926,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#connect-to-the-web-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect to the web interface
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Connect to the web interface">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hotspot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hotspot
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#outside-network" class="md-nav__link">
-    <span class="md-ellipsis">
-      Outside network
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#interface-overview" class="md-nav__link">
     <span class="md-ellipsis">
       Interface overview
@@ -878,45 +969,78 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dashboards" class="md-nav__link">
+  <a href="#dashboards-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Dashboards
+      Dashboards menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#setup-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      Setup menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
+  <a href="#monitoring-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Monitoring
+      Monitoring menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#system" class="md-nav__link">
+  <a href="#system-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      System
+      System menu
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
+  <a href="#help-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      Help
+      Help menu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-the-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control the robot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control the robot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-to-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send to goal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual control
     </span>
   </a>
   
@@ -943,84 +1067,102 @@
 
 
 <h1 id="mir-web-interface">MiR web interface</h1>
-<p>This is an overview of the MiR web interface. Here you will find</p>
-<ul>
-<li>how to connect to the interface</li>
-<li>the interface functions that are used the most. This <strong>is not</strong> a complete how-to on the use of the web interface capabilities. For detailed information about the interface see the <em>MiR robot Reference Guide</em> pdf. (TODO) </li>
-</ul>
-<h2 id="connect-to-the-web-interface">Connect to the web interface</h2>
-<p>You can connect to the web interface over its hotspot or the <a href="#wifi">outside network</a> it is connected to.</p>
-<h3 id="hotspot">Hotspot</h3>
-<ul>
-<li>connect to the MiR_R*** hotspot with the password</li>
-<li>open mir.com (default IP = 192.168.12.20) in your browser</li>
-<li>use your credentials to log in to the web interface</li>
-</ul>
-<h3 id="outside-network">Outside network</h3>
-<ul>
-<li>you have to know the <code>MiR100_IP</code>. If you don't, connect to the web interface over hotspot and go to <code>System -&gt; Settings -&gt; WiFi</code>. <code>MiR100_IP</code> is listed under the connection details</li>
-<li>open <code>MiR100_IP</code> in your browser</li>
-<li>use your credentials to log in to the web interface</li>
-</ul>
+<p>This is an overview of the MiR web interface. Here you will find the most common MiR web interface functions. This <strong>is not</strong> a complete how-to on the use of the web interface capabilities. For detailed information about the interface see the <em>MiR robot Reference Guide</em> pdf. (TODO) </p>
+<p>To establish a connection to the MiR web interface see <a href="../mir_connection/">Connect to MiR100</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>MiR100 internal clock is prone to desynchronization which can mess with the robot control.<br />
-First thing you have to do after you connect to the MiR web interface is go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Click "load from device" and "Save changes".</p>
+First thing you have to do after you connect to the MiR web interface is go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Click <code>Load from device</code> and <code>Save changes</code>.</p>
 </div>
 <h2 id="interface-overview">Interface overview</h2>
 <h3 id="top-bar">Top bar</h3>
-<p>The top bar shows information on the current state of the robot. You can start/pause the robot, check robot status, select you language, select your user, check the robot battery percentage or manually control the robot with the on screen joystick. Robot speed for manual control is fixed when using the joystick from the top bar. <strong>This is not the recommended use of joystick. See TODO</strong> </p>
+<p>The top bar shows information on the current state of the robot. You can start/pause the robot, check robot status, select you language, select your user, check the robot battery percentage or manually control the robot with the on screen joystick. Robot speed for manual control is fixed when using the joystick from the top bar. <strong>This is not the recommended use of joystick. Use the <a href="#example-dashboards"><em>FE_joysticks</em></a> dashboard</strong> </p>
 <p><img alt="web interface top bar" src="../img/top_bar.jpg" /></p>
 <h3 id="navigation">Navigation</h3>
-<p>To get to a specific subsection of the interface select an item in the primary menu and then in the relevant sub-menu.</p>
+<p>To get to a specific subsection of the interface select an item in the primary menu and then in the relevant submenu.</p>
 <p><img alt="web interface navigation" src="../img/navigation.jpg" /></p>
 <h2 id="interface-menus">Interface menus</h2>
-<h3 id="dashboards">Dashboards</h3>
-<p>Dashboards are the main way you interact with the robot over the web interface. You can create your own dashboard that displays only relevant information for your use case. Select <code>Dashboards</code> to open the list of dashboards, and select the <code>Create dashboard</code> button to open the dashboard designer. Alternatively, you can select an existing dashboard from the list. The dashboard below includes a Mission queue, mission action log, two mission buttons, a joystick and the map.</p>
+<h3 id="dashboards-menu">Dashboards menu</h3>
+<p>Dashboards are the main way you interact with the robot over the web interface. A dashboard is made up of a
+number of widgets, each representing a feature in the system, such as a particular mission, the map the robot is running in, or the current mission queue. You can create your own dashboard that displays only relevant information for your use case. The dashboard below includes a Mission queue, mission action log, two mission buttons, a joystick and the map.</p>
 <p><img alt="web interface dashboard" src="../img/dashboard.png" /></p>
-<h3 id="setup">Setup</h3>
-<h4 id="missions">Missions</h4>
-<p>A mission is a predefined series of actions that the robot can be set to perform.  A mission can be a simple transportation task between defined positions or a more complex job.<br />
-To create a new mission select <code>Setup -&gt; Missions -&gt; Create mission</code> to open the mission designer. There you can add different actions to the mission, such as <em>move to position</em>, <em>wait</em>, <em>show light</em> and others. You can also use logic like a <em>for</em> loop.</p>
-<p><img alt="web interface mission designer" src="../img/mission_designer.png" /></p>
-<p>Missions are started by adding a mission to the mission queue and clicking on the continue button in the top bar or in the dashboard. The robot will perform the missions in the order they are added, and you can rearrange the queued missions if needed. You can enqueue a mission:</p>
+<h5 id="creating-a-dashboard">Creating a dashboard</h5>
+<p>Select <code>Dashboards</code> to open the list of dashboards, and select the <code>Create dashboard</code> button to open the dashboard designer. Alternatively, you can select an existing dashboard from the list to edit. Design the dashboard by selecting widgets from the menus in the top bar. Resize the widgets by pulling the arrow in the lower right corner and rearrange their order by selecting and dragging them. Some widgets require further settings. For example, you must select a particular mission for mission buttons. To do this, select the pen icon in the lower left corner and select the wanted action.</p>
+<p><img alt="web interface dashboard designer" src="../img/interface__create_dashboard.jpg" /></p>
+<h5 id="example-dashboards">Example dashboards</h5>
+<p>In the dashboards list you can find the <em>FE_standard</em> and <em>FE_joysticks</em> dashboards. <em>FE_standard</em> is a template for a standard use case and is a good starting place for designing your own. <em>FE_joysticks</em> is a dashboard that contains only joystick control widgets where each joystick has a different speed setting. This is practical for manual control of the robot where you want to use different speeds - slower for narrower areas, and faster for open space.</p>
+<p>TODO: joystick dashboard screenshot</p>
+<h3 id="setup-menu">Setup menu</h3>
+<h4 id="missions-submenu">Missions submenu</h4>
+<p>A mission is a predefined series of actions that the robot can be set to perform. It can be a simple transportation task between defined positions or a more complex job. The robot will perform the missions in the order they are added, and an operator may rearrange the queued missions if needed.  </p>
+<p>Missions are started by adding a mission to the mission queue and clicking on the continue button in the top bar or in the dashboard, if you add the pause/continue widget. The robot will perform the missions in the order they are added, and you can rearrange the queued missions if needed. You can enqueue a mission:</p>
 <ul>
 <li>from a dashboard: you can configure a mission button</li>
-<li>from the <code>Missions</code> menu: in the mission list click on the green button next to the selected mission.</li>
+<li>from the missions menu: in the mission list click on the green button next to the selected mission.</li>
 </ul>
-<h4 id="maps">Maps</h4>
-<p>In <code>Setup -&gt; Maps</code> you can choose the active map by clicking the check mark next to the map on the map list. You can also create or edit the maps the robot uses. All maps must belong to a site, which is the overall container for one or more maps used in the same facility. Maps must be contained in the same site for the robot to be able to move from one map to another.<br />
-To create a new map select <code>Setup -&gt; Maps -&gt; Create map</code>. You are then directed to the map editor where you can start the mapping process and find tools to edit the map and add various features such as positions, markers and zones. For the full mapping instructions see the <em>MiR robot Reference Guide</em>.</p>
+<h5 id="creating-a-mission">Creating a mission</h5>
+<p><img alt="web interface mission designer" src="../img/mission_designer.png" /></p>
+<p>A mission is made up of actions, such as: move actions, logic actions, docking actions and sounds, which can be put together to form a mission. Missions themselves can also be nested into other missions. Most actions have adjustable parameters, for example, which position to go to and can also use variables, enabling the user to choose the value of a parameter each time the mission is used. Access these parameters with the gear button.</p>
+<p>To create a new mission select <code>Setup -&gt; Missions -&gt; Create mission</code> to open the mission designer. In the top bar you can choose the actions or missions that you want to add to the mission. You can drag and drop to rearrange the order. Actions are executed in a top-to-bottom order.</p>
+<p>You can view all the possible actions in the <em>MiR robot Reference Guide</em>.</p>
+<h4 id="maps-submenu">Maps submenu</h4>
+<p>In the Maps section, you create or edit the maps the robot uses to navigate by. All maps must belong to a site, which is the overall container for one or more maps used in the same facility. Maps must be contained in the same site for the robot to be able to move from one map to another. You can choose the active map by clicking the check mark next to the map on the map list. You can also create or edit the maps the robot uses. </p>
+<p><img alt="web interface choose map" src="../img/interface_choose_map.jpg" /></p>
+<h5 id="creating-a-map">Creating a map</h5>
+<p>To create a new map select <code>Setup -&gt; Maps -&gt; Create map</code>. You are then directed to the map editor where you can start the mapping process and find tools to edit the map and add various features such as positions, markers and zones.</p>
+<p>The built-in mapping functionality makes it possible to draw a map by manually driving the robot around the facility using the joystick while the robot uses the laser scanners to map the area. <strong>When mapping the robot speed is fixed. Slowly move the joystick to get used to the speed.</strong> You can create maps using two mapping <a href="#mapping-settings">algorithms</a>.</p>
+<p>The map recording and editing tools are all found on the icon tool bar, and the drop-down list contains all the features you can add to your map. Different tools are displayed on the icon toolbar depending on which feature you have selected from the drop-down list.</p>
+<p><img alt="web interface mapping icon bar" src="../img/interface_mapping_bar.jpg" /></p>
+<p>Press the 3-dots icon to open the Upload, download and record map dialog box. This toolbar has options for recording a new map or uploading/downloading existing ones.</p>
+<ul>
+<li><strong>Upload and overwrite:</strong> erases the existing map and replaces it with the map you upload</li>
+<li><strong>Upload and append:</strong> adds the uploaded map to the existing one</li>
+<li><strong>Download map:</strong> saves the map to your PC as a PNG file</li>
+<li><strong>Record and overwrite:</strong> erases the existing map and replaces it with the map you record</li>
+<li><strong>Record and append:</strong> adds the recorded map to the existing one</li>
+</ul>
+<p><img alt="web interface mapping dialog box" src="../img/interface_mapping_dialog_box.jpg" /></p>
+<p>Select <code>Record and overwrite</code> or <code>Record and append</code> to start the mapping engine. A blinking icon indicates that the recording has started, and you can now activate the joystick and start moving the robot around the area. To stop the mapping engine, press the record icon in the upper-left corner of the recording window.</p>
+<p>After the mapping engine stops, you can rotate the map and align it using the grid. When you finish the editing, select the check mark in the upper left-hand corner to save the map.</p>
+<h5 id="edit-the-map">Edit the map</h5>
+<p>When the map recording is done, modify the map by removing unwanted "noise", adding virtual walls, preferred or unpreferred drive zones, positions, markers and other features.</p>
+<p>The left side tool bar has the basic tools for saving, undoing, and navigating in the map you are working on. Furthermore, different tools appear on the tool bar depending on which map layer you select from the Object types drop-down list.</p>
+<p><img alt="web interface mapping edit tool bar" src="../img/interface_mapping_edit_tool_bar.jpg" /></p>
+<p>The Select object-list contains all features that you can add to the map, such as positions, markers, zones, walls, and floors. View all object descriptions in the <em>MiR robot Reference Guide</em>.</p>
+<p><img alt="web interface mapping object list" src="../img/interface_mapping_object_list.jpg" /></p>
+<p>The right side tool bar has tools for controlling the map view and synchronizing the robot’s position with the map view.</p>
+<p><img alt="web interface mapping edit tool bar" src="../img/interface_mapping_edit_tool_bar_2.jpg" /></p>
+<p>Bellow is an image of a finished map. It contains multiple robot positions, a marker and two forbidden zones (red).</p>
 <p><img alt="web interface map" src="../img/mir_map.png" /></p>
 <h4 id="other-setup-submenus">Other setup submenus</h4>
 <ul>
-<li><strong>Sounds:</strong> you can upload new sounds to the robot or edit the volume and length of the uploaded sounds. Sounds can be used in missions as alerts.</li>
-<li><strong>Transitions:</strong> transitions are used to handle changeovers from one map to another within the same site. </li>
-<li><strong>I/O modules:</strong> I/O modules (Bluetooth and WISE) are used for receiving and giving input and output to be able to communicate with external devices.</li>
-<li><strong>Users:</strong> set up, edit, and delete system users.</li>
-<li><strong>User groups:</strong> create user groups and assign permissions to
+<li><strong>Sounds submenu:</strong> you can upload new sounds to the robot or edit the volume and length of the uploaded sounds. Sounds can be used in missions as alerts.</li>
+<li><strong>Transitions submenu:</strong> transitions are used to handle changeovers from one map to another within the same site. </li>
+<li><strong>I/O modules submenu:</strong> I/O modules (Bluetooth and WISE) are used for receiving and giving input and output to be able to communicate with external devices.</li>
+<li><strong>Users submenu:</strong> set up, edit, and delete system users.</li>
+<li><strong>User groups submenu:</strong> create user groups and assign permissions to
 each group.</li>
-<li><strong>Paths:</strong> Paths are saved routes between two positions. The first time the robot runs the route between two positions, the calculated path is saved and used every time the robot runs the same route, thereby saving time for route calculation. A path is automatically recalculated only in the event that one of its positions is modified. You can delete a path, and the robot will then calculate a new path the next time it runs between those two positions.</li>
-<li><strong>Path guides:</strong> A path guide makes it possible to define paths that the robot should follow between two positions by defining waypoint positions between the start and goal. </li>
-<li><strong>Footprints:</strong> A footprint defines the size of the robot and its top module or load.</li>
+<li><strong>Paths submenu:</strong> Paths are saved routes between two positions. The first time the robot runs the route between two positions, the calculated path is saved and used every time the robot runs the same route, thereby saving time for route calculation. A path is automatically recalculated only in the event that one of its positions is modified. You can delete a path, and the robot will then calculate a new path the next time it runs between those two positions.</li>
+<li><strong>Path guides submenu:</strong> A path guide makes it possible to define paths that the robot should follow between two positions by defining waypoint positions between the start and goal. </li>
+<li><strong>Footprints submenu:</strong> A footprint defines the size of the robot and its top module or load.</li>
 </ul>
-<h3 id="monitoring">Monitoring</h3>
+<h3 id="monitoring-menu">Monitoring menu</h3>
 <ul>
-<li><strong>Analytics:</strong> gives a graphic overview of the robot's driven distance over a specified period of time.</li>
-<li><strong>System log:</strong> contains events that are logged by the operating system components. The system log contains information about system state at a given time (shown by color-codes), the affected module, a short explanation, and a time stamp.</li>
-<li><strong>Error logs:</strong> a list of all detected system errors. Each entry is shown with a description, an indication of which module is affected, and the time when the error occurred.</li>
-<li><strong>Hardware health:</strong> allows you to check the condition of the robot's hardware components, such as motor controllers, lasers scanners, and cameras.</li>
-<li><strong>Safety system:</strong> provides a live view of the input from the laser scanners and the state of the emergency stop button.</li>
-<li><strong>Mission log:</strong> contains the list of all missions that the robot has executed and the mission that is running now. </li>
+<li><strong>Analytics submenu:</strong> gives a graphic overview of the robot's driven distance over a specified period of time.</li>
+<li><strong>System log submenu:</strong> contains events that are logged by the operating system components. The system log contains information about system state at a given time (shown by color-codes), the affected module, a short explanation, and a time stamp.</li>
+<li><strong>Error logs submenu:</strong> a list of all detected system errors. Each entry is shown with a description, an indication of which module is affected, and the time when the error occurred.</li>
+<li><strong>Hardware health submenu:</strong> allows you to check the condition of the robot's hardware components, such as motor controllers, lasers scanners, and cameras.</li>
+<li><strong>Safety system submenu:</strong> provides a live view of the input from the laser scanners and the state of the emergency stop button.</li>
+<li><strong>Mission log submenu:</strong> contains the list of all missions that the robot has executed and the mission that is running now. </li>
 </ul>
-<h3 id="system">System</h3>
-<h4 id="settings">Settings</h4>
+<h3 id="system-menu">System menu</h3>
+<h4 id="settings-submenu">Settings submenu</h4>
 <p>Settings contains the robot's parameter settings where the settings are divided into sub groups. Here are some of the most important settings:</p>
-<h5 id="mapping">Mapping</h5>
+<h5 id="mapping-settings">Mapping settings</h5>
 <ul>
-<li><code>Mapping -&gt; Mapping algorithm</code>: the algorithm the robot uses for creating maps. Choose between <em>Hector</em> and <em>Carthographer</em>.</li>
+<li><code>Mapping -&gt; Mapping algorithm</code>: the algorithm the robot uses for creating maps. Choose between <em>Hector</em> and <em>Carthographer</em> (default). The <em>Cartographer</em> method records multiple smaller maps and then compiles those into one map after the recording session. It is recommended to map in a circular pattern and closing loops. The <em>Hector</em> method records and compiles data in one map during the mapping. It is recommended to map in a branch pattern, while going back over your own tracks several times.</li>
 </ul>
-<h5 id="planner">Planner</h5>
+<h5 id="planner-settings">Planner settings</h5>
 <ul>
 <li><code>Planner -&gt; Desired speed</code>: the desired default speed in m/s. This value can also be changed through a mission action.</li>
 <li><code>Planner -&gt; Maximum allowed speed</code>: the robot's maximum speed in m/s which cannot be exceeded no matter what is stated in missions, zones, or other settings.</li>
@@ -1029,36 +1171,54 @@ each group.</li>
 <li><code>Planner -&gt; Path timeout</code>: the number of seconds where the robot cannot follow the path before it generates a new global plan.</li>
 <li><code>Planner -&gt; Path deviation</code>: the maximum distance in meters that the robot's local plan is allowed to deviate from the global plan.</li>
 </ul>
-<h5 id="ur-interface">UR interface</h5>
+<h5 id="ur-interface-settings">UR interface settings</h5>
 <ul>
-<li><code>UR interface -&gt; Universal Robot IP address</code>: the IP address of the UR robot. Used with the <a href="TODO">industrial interface control</a></li>
+<li><code>UR interface -&gt; Universal Robot IP address</code>: the IP address of the UR robot. Used with the <a href="../MiRco/mirco_control.md/#mirco-industrial-interface">industrial interface control</a></li>
 </ul>
-<h5 id="wifi">WiFi</h5>
+<h5 id="features-settings">Features settings</h5>
+<ul>
+<li><code>Features -&gt; Universal Robots Interface</code>: enable the running UR programs from inside MiR missions. Used with the <a href="../MiRco/mirco_control.md/#mirco-industrial-interface">industrial interface control</a></li>
+</ul>
+<h5 id="wifi-settings">WiFi settings</h5>
 <ul>
 <li><code>WiFi -&gt; Add connection</code>: used to connect MiR100 to an outside network. Select the network you wish to connect and fill in the required information. <code>MiR100_IP</code> is displayed under the network connection details. When the user and MiR100 are connected to the same outside network, you can use this IP to access the web interface.</li>
 </ul>
-<h5 id="date-time">Date &amp; Time</h5>
+<h5 id="date-time-settings">Date &amp; Time settings</h5>
 <ul>
 <li><code>Date&amp;Time -&gt; Load from device -&gt; Save changes</code>: synchronize the internal clock. Since the internal clock is prone to desynchronization <strong>this needs to be done on every boot</strong>.</li>
 </ul>
 <h4 id="other-system-submenus">Other system submenus</h4>
 <ul>
-<li><strong>Processes:</strong> displays the software modules that control the system processes on the robot.</li>
-<li><strong>PLC registers:</strong> registers can be accessed through a serial interface using the robot’s USB port (via RS232 adapter) or through a REST interface using the robot’s Ethernet connection. </li>
-<li><strong>Software versions:</strong> you can update the robot to run the newest
+<li><strong>Processes submenu:</strong> displays the software modules that control the system processes on the robot.</li>
+<li><strong>PLC registers submenu:</strong> registers can be accessed through a serial interface using the robot’s USB port (via RS232 adapter) or through a REST interface using the robot’s Ethernet connection. </li>
+<li><strong>Software versions submenu:</strong> you can update the robot to run the newest
 software and see a list of all previous versions installed on the robot</li>
-<li><strong>Backups:</strong> copies of the configuration and system state data of your robot</li>
-<li><strong>Robot setup:</strong> contains the robot configuration and calibration properties.</li>
-<li><strong>Triggers:</strong> yhe robot can be set up to use Modbus TCP/IP communication. In the Triggers section you can set up links between robot missions and Modbus coil IDs</li>
+<li><strong>Backups submenu:</strong> copies of the configuration and system state data of your robot</li>
+<li><strong>Robot setup submenu:</strong> contains the robot configuration and calibration properties.</li>
+<li><strong>Triggers submenu:</strong> yhe robot can be set up to use Modbus TCP/IP communication. In the Triggers section you can set up links between robot missions and Modbus coil IDs</li>
 </ul>
-<h3 id="help">Help</h3>
+<h3 id="help-menu">Help menu</h3>
 <ul>
-<li><strong>Robot information:</strong> contains robot information.</li>
-<li><strong>API documentation:</strong> All functionality found in the robot interface can also be accessed through the robot's REST API. The REST API is what the robot interface uses to communicate with the robot. Here you can try the REST API. Enter your username and password and then select <em>Launch API</em> documentation. Each endpoint you can use is documented, and you can select <em>Try it out</em> to send an API request using the entered authorization. We also made a <a href="TODO">python REST API</a> for the MiRco robot.</li>
-<li><strong>Remote access:</strong> MiR Technical Support team remote access.</li>
-<li><strong>Service book:</strong> notes about the robot.</li>
-<li><strong>Manual:</strong> copy of the reference guide.</li>
+<li><strong>Robot information submenu:</strong> contains robot information.</li>
+<li><strong>API documentation submenu:</strong> All functionality found in the robot interface can also be accessed through the robot's REST API. The REST API is what the robot interface uses to communicate with the robot. Here you can try the REST API. Enter your username and password and then select <em>Launch API</em> documentation. Each endpoint you can use is documented, and you can select <em>Try it out</em> to send an API request using the entered authorization. We also made a <a href="../mir_rest_api/">python REST API</a> for the MiRco robot.</li>
+<li><strong>Remote access submenu:</strong> MiR Technical Support team remote access.</li>
+<li><strong>Service book submenu:</strong> notes about the robot.</li>
+<li><strong>Manual submenu:</strong> copy of the reference guide.</li>
 </ul>
+<h2 id="control-the-robot">Control the robot</h2>
+<h3 id="send-to-goal">Send to goal</h3>
+<p>TODO:check these instruction</p>
+<p>The main way to control MiR100 is through missions, however you can also send the robot to individual goals.  </p>
+<ul>
+<li>Send to target: use the map to send MiR100 to a goal not predefined (as a position or marker) on the active mao. Click on the position on the map and use your mouse to set the orientation</li>
+<li>Send to position: select the chosen position on the active map and select <code>Go TO</code></li>
+<li>Send to marker: select the chosen marker on the active map and select <code>Go TO</code></li>
+</ul>
+<p>Each of these command will add an action to the mission queue. You can append them or overwrite the queue.</p>
+<h3 id="manual-control">Manual control</h3>
+<p>The easiest way to move MiR100 to a desired goal is to manually control the robot.</p>
+<p>The web interface has an onscreen joystick in the top bar of the interface but as mentioned, this is not the recommended method since the robot speed when using the top bar joystick is fixed. This can cause problems in narrow areas. Instead use the <em>FE_joysticks</em> <a href="#example-dashboards">dashboard</a> - it includes multiple onscreen joystick widgets with different speeds. </p>
+<p>The best way to use the joystick is to access the web interface on your phone and guide the robot with your finger.</p>
 
 
 
@@ -1083,6 +1243,46 @@ software and see a list of all previous versions installed on the robot</li>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../mir_connection/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Connect to MiR100">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Connect to MiR100
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mir_ros_control/" class="md-footer__link md-footer__link--next" aria-label="Next: ROS control">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ROS control
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1105,7 +1305,7 @@ software and see a list of all previous versions installed on the robot</li>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.sections", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
