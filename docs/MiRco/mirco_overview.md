@@ -4,7 +4,7 @@
 <img src="../img/MiRco_model.png" class="image_ver" alt="MiRco robot"/>
 </div>
 
-`MiRco` is a mobile manipulator consisting of commercially available components combined in a custom housing. It integrates `MiR100` autonomous mobile robot with the `UR5e` manipulator. 
+`MiRco` is a mobile manipulator consisting of commercially available components combined in a custom housing. It integrates `MiR100` autonomous mobile robot with the `UR5e` manipulator arm. 
 
 Control is possible with both the industrial and ROS interfaces - see [MiRco interfaces](mirco_interface.md).
 

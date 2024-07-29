@@ -5,7 +5,7 @@ Make sure to follow the **industrial interface** parts of the [Starting `MiRco`]
 
 - Design the UR program normally.
 
-- Design the MiR mission. In the place where you want to perform robot manipulation insert the `UR -> Run UR program` action. Set the `program name` parameter to the UR program absolute path without the .urp extension. `MiR100` will wait for `UR5e` to finish program execution and then continue with its mission.
+- Design the [MiR mission](../MiR100/mir_web_interface.md/#missions-submenu). In the place where you want to perform robot manipulation insert the `UR -> Run UR program` action. Set the `program name` parameter to the UR program absolute path without the .urp extension. `MiR100` will wait for `UR5e` to finish program execution and then continue with its mission.
 
 <div >
 <img src="../img/industrial_mission.png" alt="MiRco industrial interface mission"/>
@@ -14,7 +14,7 @@ Make sure to follow the **industrial interface** parts of the [Starting `MiRco`]
 ## Usage
 - set `UR5e` to `Remote control` mode
 - add MiR mission to the mission queue
-- start mission execution on the web interface
+- start mission execution in the web interface
 
 !!! note
     By installing a plugin for the Polyscope software package - a [URCap](https://www.universal-robots.com/plus/products/universal-robots/mir-ur-synchronisation-urcap/), the functionality of the UR teach pendant can be extended. The plugin allows starting and stopping `MiR100` missions, reading and writing `MiR100` registers and accessing `MiR100` states such as battery status, robot status and mission status. This documentation does not cover the use of this URCap.

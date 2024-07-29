@@ -14,16 +14,16 @@ For an overview of the individual ROS packages for `MiR100` and `UR5e` see the [
 ### Start MiRco control
 - Prepare the robot arm. On the teach pendant load the [external control UR program](./mirco_start.md/#external-control-ur-program) program. Power on and start the robot manipulator.
 
-- Run the `MiRco` bringup launch file. Wait until the "subscribing to" / "publishing to" messages stop appearing. This means the connection is established
+- Run `mirco_bringup.launch`. Wait until the "subscribing to" & "publishing to" messages stop appearing. This means the connection is established
 ```bash
-# hotspot
+# MiR100 connection over hotspot
 roslaunch mirco_robot mirco_bringup.launch
 
-# outside network
+# MiR100 connection over outside network
 roslaunch mirco_robot mirco_bringup.launch mir_ip:=<MiR100_IP>
 
 ```
-If you know `MiR100_IP` will not be changing you can edit `mirco_bringup.launch` as:
+If you know `MiR100_IP` will not be changing (if you set up static IP) you can edit `mirco_bringup.launch` as:
 ```bash
 # line 7
 <arg name="mir_ip" default="<MiR100_IP>" doc="MiR IP address"/>
@@ -37,14 +37,12 @@ roslaunch mirco_robot mirco_bringup.launch
 Robot connected to reverse interface. Ready to receive control commands
 ```
 
-- In another terminal run the `MiRco` control launch file. 
+- In another terminal run `mirco_control.launch`. 
 ```bash
 roslaunch mirco_robot mirco_control.launch
 ```
 
 ### RViz
-TODO: check rviz config
-
 After you started MiRco control, you can send the robot to a goal using the `2D Nav Goal` tool in RViz.  
 
 Send the robot to a goal:
@@ -55,15 +53,17 @@ roslaunch mirco_robot view_mirco.launch
 ```
 - Make sure these RViz settings are set:
 ```
-Panels -> Tool Properties -> 2D Nav Goal -> Topic: /mirco_namespace/mir_namespace/move_base_simple/goal
-Panels -> Tool Properties -> 2D Pose Estimate -> Topic: /mirco_namespace/mir_namespace/initialpose
+Panels -> Tool Properties -> 2D Nav Goal -> Topic: /mirco/mir100/move_base_simple/goal
+Panels -> Tool Properties -> 2D Pose Estimate -> Topic: /mirco/mir100/initialpose
 Global Options -> Fixed Frame: map
 ```
 - use `2D Pose Estimate` to mark the approximate MiR100 start location
 - use `2D Nav Goal` to send the robot to a goal
 
+TODO: check rviz config
 
 ## mirco_robot package
+Overview of the main control package.
 
 ### Launch files
 **mirco_bringup.launch**
@@ -92,7 +92,7 @@ Demo delivery application inside Robolab. Needs (TODO:map name) to be the active
 - returns to the station and picks up the gear
 - goes to an end position 
 
-**conveyor.launch**: Demo pick and place application for the manipulator.
+**conveyor.launch**: Demo pick and place application for the manipulator. Same as `delivery.launch` without repositioning of the mobile base.
 
 ### Config files
 #### arm_gripper_joint_sources.yaml

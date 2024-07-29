@@ -1,13 +1,13 @@
 # ROS control
-This page describes the ROS control for the **UR5e manipulator & Robotiq 2f85 gripper only** . To control the manipulator and gripper as part of the MiRco mobile manipulator see [MiRco ROS control](../MiRco/mirco_ros_control.md).  
+This page describes the ROS control for the **`UR5e` manipulator & `Robotiq 2F-85` gripper only** . To control the manipulator and gripper as part of the `MiRco` mobile manipulator see [MiRco ROS control](../MiRco/mirco_ros_control.md).  
 
 Before controlling the robot follow the [Starting UR5e & Robotiq 2F-85](./ur_2f85_start.md) instructions.
 
 ## Packages overview
 - **`ur5e_2f85:`** main control package
-- **`ur5e_2f85_description:`** URDF description, kinematics calibration and controllers configuration files for UR5e with the attached 2f85
+- **`ur5e_2f85_description:`** URDF description, kinematics calibration and controllers configuration files for `UR5e` with the attached `2F-85`
 - **`ur5e_2f85_moveit_config:`** MoveIt! configuration and launch files
-- **`robotiq_2f85:`** Robotiq ROS driver, specifically for 2f85 gripper. Fork of the [original driver](https://github.com/TAMS-Group/robotiq) 
+- **`robotiq_2f85:`** Robotiq ROS driver, specifically for `2F-85` gripper. Fork of the [original driver](https://github.com/TAMS-Group/robotiq) 
 
 ## Usage
 TODO: test

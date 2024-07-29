@@ -1,10 +1,10 @@
 # MiR web interface
-This is an overview of the MiR web interface. Here you will find the most common MiR web interface functions. This **is not** a complete how-to on the use of the web interface capabilities. For detailed information about the interface see the *MiR robot Reference Guide* pdf. (TODO) 
+This is an overview of the MiR web interface. Here you will find the most common MiR web interface functions. This **is not** a complete how-to on the use of the web interface capabilities. For detailed information about the interface see the *MiR robot Reference Guide* pdf. 
 
-To establish a connection to the MiR web interface see [Connect to MiR100](./mir_connection.md).
+To establish a connection to the MiR web interface see [Connect to `MiR100`](./mir_connection.md).
 
 !!! warning
-    MiR100 internal clock is prone to desynchronization which can mess with the robot control.  
+    `MiR100` internal clock is prone to desynchronization which can mess with the robot control.  
     First thing you have to do after you connect to the MiR web interface is go to `System -> Settings -> Date & Time` and synchronize the internal clock. Click `Load from device` and `Save changes`.
 
 
@@ -33,7 +33,7 @@ Select `Dashboards` to open the list of dashboards, and select the `Create dashb
 ![web interface dashboard designer](./img/interface__create_dashboard.jpg)
 
 ##### Example dashboards
-In the dashboards list you can find the *FE_standard* and *FE_joysticks* dashboards. *FE_standard* is a template for a standard use case and is a good starting place for designing your own. *FE_joysticks* is a dashboard that contains only joystick control widgets where each joystick has a different speed setting. This is practical for manual control of the robot where you want to use different speeds - slower for narrower areas, and faster for open space.
+In the dashboards list you can find the *FE_standard* and *FE_joysticks* dashboards. *FE_standard* is a template for a standard use case and is a good starting place for designing your own. *FE_joysticks* is a dashboard that contains only joystick control widgets where each joystick has a different speed setting. This is practical for manual control of the robot where you want to use different speeds - slower for narrower areas, and faster for open space. The best way to use the joystick is to access the web interface on your phone and guide the robot with your finger.
 
 TODO: joystick dashboard screenshot
 
@@ -147,7 +147,7 @@ Settings contains the robot's parameter settings where the settings are divided 
 - `Features -> Universal Robots Interface`: enable the running UR programs from inside MiR missions. Used with the [industrial interface control](../MiRco/mirco_control.md/#mirco-industrial-interface)
 
 ##### WiFi settings
-- `WiFi -> Add connection`: used to connect MiR100 to an outside network. Select the network you wish to connect and fill in the required information. `MiR100_IP` is displayed under the network connection details. When the user and MiR100 are connected to the same outside network, you can use this IP to access the web interface.
+- `WiFi -> Add connection`: used to connect `MiR100` to an outside network. Select the network you wish to connect and fill in the required information. `MiR100_IP` is displayed under the network connection details. When the user and `MiR100` are connected to the same outside network, you can use this IP to access the web interface.
 
 
 ##### Date & Time settings
@@ -178,16 +178,16 @@ software and see a list of all previous versions installed on the robot
 ### Send to goal
 TODO:check these instruction
 
-The main way to control MiR100 is through missions, however you can also send the robot to individual goals.  
+The main way to control `MiR100` is through missions, however you can also send the robot to individual goals.  
 
-- Send to target: use the map to send MiR100 to a goal not predefined (as a position or marker) on the active mao. Click on the position on the map and use your mouse to set the orientation
+- Send to target: use the map to send `MiR100` to a goal not predefined (as a position or marker) on the active map. Click on the position on the map and use your mouse to set the orientation
 - Send to position: select the chosen position on the active map and select `Go TO`
 - Send to marker: select the chosen marker on the active map and select `Go TO`
 
 Each of these command will add an action to the mission queue. You can append them or overwrite the queue.
 
 ### Manual control
-The easiest way to move MiR100 to a desired goal is to manually control the robot.
+The easiest way to move `MiR100` to a desired goal is to manually control the robot.
 
 The web interface has an onscreen joystick in the top bar of the interface but as mentioned, this is not the recommended method since the robot speed when using the top bar joystick is fixed. This can cause problems in narrow areas. Instead use the *FE_joysticks* [dashboard](#example-dashboards) - it includes multiple onscreen joystick widgets with different speeds. 
 

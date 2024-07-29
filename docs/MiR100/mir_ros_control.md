@@ -1,10 +1,10 @@
 # ROS control
-This page describes the ROS control for the **MiR100 robot only** . To control the mobile base as part of the MiRco mobile manipulator see [MiRco ROS control](../MiRco/mirco_ros_control.md).  
+This page describes the ROS control for the **`MiR100` robot only** . To control the mobile base as part of the `MiRco` mobile manipulator see [`MiRco` ROS control](../MiRco/mirco_ros_control.md).  
 
-To establish a ROS connection with MiR100 see [Connect to MiR100](./mir_connection.md).
+To establish a ROS connection with `MiR100` see [Connect to `MiR100`](./mir_connection.md).
 
 !!! warning
-    MiR100 internal clock is prone to desynchronization which can mess with the robot control.  
+    `MiR100` internal clock is prone to desynchronization which can mess with the robot control.  
     Before controlling the robot, you have to connect to the [MiR web interface](./mir_connection.md/#establish-mir-web-interface-connection) and go to `System -> Settings -> Date & Time` and synchronize the internal clock. Click `Load from device` and `Save changes`.
 
 !!! note
@@ -19,10 +19,10 @@ To establish a ROS connection with MiR100 see [Connect to MiR100](./mir_connecti
 ## Usage
 ### Start mir_control
 ```bash
-# hotspot
+# MiR100 connection over hotspot
 roslaunch mir_control mir_control.launch
 
-# outside network
+# MiR100 connection over outside network
 roslaunch mir_control mir_control.launch mir_ip:=<MiR100_IP>
 ```  
 
@@ -34,20 +34,20 @@ After you started `mir_control`, you can send the robot to a goal using the `2D 
 Make sure to set these RViz settings:
 
 ```
-Panels -> Tool Properties -> 2D Nav Goal -> Topic: /mir_namespace/move_base_simple/goal
-Panels -> Tool Properties -> 2D Pose Estimate -> Topic: /mir_namespace/initialpose
+Panels -> Tool Properties -> 2D Nav Goal -> Topic: /mir100/move_base_simple/goal
+Panels -> Tool Properties -> 2D Pose Estimate -> Topic: /mir100/initialpose
 Global Options -> Fixed Frame: map
 ```
 
 Send the robot to a goal:
 
-- use `2D Pose Estimate` to mark the approximate MiR100 start location
+- use `2D Pose Estimate` to mark the approximate `MiR100` start location
 - use `2D Nav Goal` to send the robot to a goal
 
 ## mir_control package
 The main control package. This is a wrapper around the `mir_driver` package. For details about `mir_driver` see the [GitHub page](https://github.com/DFKI-NI/mir_robot).
 
-`mir_control` starts another `roscore` on the host computer, connecting to the MiR100 internal `roscore` over `ROS Bridge`. See the [MiRco ROS schematic](../MiRco/mirco_interface.md/#mirco-ros-interface) for a visual aid of the connection.  
+`mir_control` starts another `roscore` on the host computer, connecting to the `MiR100` internal `roscore` over `ROS Bridge`. See the [MiRco ROS schematic](../MiRco/mirco_interface.md/#mirco-ros-interface) for a visual aid of the connection.  
 
 `mir_control` adds a control node, a python robot class, a goal teacher, ROS services and [REST API integration](./mir_rest_api.md). This effectively enables the use of all web interface functions.
 
@@ -59,7 +59,7 @@ The main control package. This is a wrapper around the `mir_driver` package. For
 
 ### Nodes 
 #### `mir_control_node.py` 
-The main control node for MiR100. Initializes a `MiR100` python object. See `mir100_class.py` script for details on the object.
+The main control node for `MiR100`. Initializes a `MiR100` python object. See `mir100_class.py` script for details on the object.
 
 ### Config files
 #### target_goals.yaml
@@ -101,9 +101,9 @@ marker_name:
 Services are established with the `mir_control_node` or whenever you create a `MiR100` object defined in `mir100_class.py`.
 
 #### save_mobile_goal (TODO: check if works correctly)
-Saves the current MiR100 pose under selected name. The pose is saved in `/config/target_goals.yaml`.  
+Saves the current `MiR100` pose under selected name. The pose is saved in `/config/target_goals.yaml`.  
 
-If the current MiR100 map does not include a position or marker with the same name, a position with the selected name is created and saved to the current MiR map. If a position or marker with the same name already exists, they are overwritten with the current MiR100 pose.
+If the current `MiR100` map does not include a position or marker with the same name, a position with the selected name is created and saved to the current MiR map. If a position or marker with the same name already exists, they are overwritten with the current `MiR100` pose.
 
 #### send_to_goal
 Send robot to a goal saved in `/config/target_goals.yaml`.  
@@ -121,7 +121,7 @@ Currently only VL type markers are supported.
 ## mir_joy_teleop package
 A package for joystick control.
 
-As with [connecting to the robot](./mir_connection.md/#establish-ros-connection), you can send the joystick commands directly to the MiR100 internal `roscore` or use it with the `mir_control` package.
+As with [connecting to the robot](./mir_connection.md/#establish-ros-connection), you can send the joystick commands directly to the `MiR100` internal `roscore` or use it with the `mir_control` package.
 
 !!! note
     

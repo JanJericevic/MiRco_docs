@@ -17,7 +17,7 @@ nav:
     - Web interface: MiR100/mir_web_interface.md
     - ROS control: MiR100/mir_ros_control.md
     - REST API: MiR100/mir_rest_api.md
-    - Glossary: MiR100/mir_glossary.md
+    # - Glossary: MiR100/mir_glossary.md
   - UR5e & Robotiq 2F-85:
     - Overview: UR5e_2F85/ur_2f85_overview.md
     - Starting UR5e & Robotiq 2F-85: UR5e_2F85/ur_2f85_start.md

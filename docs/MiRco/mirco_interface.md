@@ -5,7 +5,7 @@ There are two ways of controlling `MiRco`:
 - **[MiRco ROS interface](#mirco-ros-interface):** uses a `MiRco PC` running ROS to control `MiRco`.
 
 ## MiRco industrial interface 
-MiR and UR already include the ability to connect robots for basic synchronous operation using a MiR action. MiR action only takes care of the synchronization of the task handover. The individual robot tasks - MiR missions and UR programs - have to be predefined in their interfaces, then the task execution is handled by their respective control systems. The `UR5e` manipulator has to be in remote control mode. For instructions see [`MiRco` control](./mirco_control.md/#mirco-industrial-interface). A schematic representation of a simple example is shown below.
+MiR and UR already include the ability to connect robots for basic synchronous operation using a [MiR action](../MiR100/mir_web_interface.md/#missions-submenu). MiR action only takes care of the synchronization of the task handover. The individual robot tasks - MiR missions and UR programs - have to be predefined in their interfaces, then the task execution is handled by their respective control systems. The `UR5e` manipulator has to be in remote control mode. For instructions see [`MiRco` industrial interface control](./mirco_industrial_control.md). A schematic representation of a simple example is shown below.
 
 <div class="svg">
 <img src="../img/ind_workflow_ver_eng.svg" alt="MiRco industrial interface diagram"/>

@@ -25,14 +25,14 @@ You can connect to the web interface over its hotspot or the [outside network](#
 
 
 ## Establish ROS connection
-MiR100 has a running ROS instance on its internal computer. This means you can:
+`MiR100` has a running ROS instance on its internal computer. This means you can:
 
 - connect to its internal `roscore`
 - **recommended**: connect using the `mir_control` package
 
 ### Internal roscore
 **You have to be connected to the robot hotspot (MiR_R\*\*\*\*).**  
-Set the ROS master addres to the address of MiR100 internal roscore and test the connection.
+Set the ROS master addres to the address of `MiR100` internal roscore and test the connection.
 
 ```bash
 # this needs to be done in every terminal
@@ -63,7 +63,7 @@ twist:
 ```
 
 ### mir_control package
-Using `mir_control` you can establish a ROS connection over the MiR100 hotspot or the [outside network](#connect-mir100-to-a-wifi-network) MiR100 is connected to.
+Using `mir_control` you can establish a ROS connection over the MiR_R*** hotspot or the [outside network](#connect-mir100-to-a-wifi-network) `MiR100` is connected to.
 
 #### Hotspot
 If you are connected to the MiR_R**** hotspot:
@@ -93,7 +93,7 @@ angular:
 ```
 
 #### Outside network
-If you are connected to the same outside network as MiR100:
+If you are connected to the same outside network as `MiR100`:
 
 ```bash
 # launch mir_control
