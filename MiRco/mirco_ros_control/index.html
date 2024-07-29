@@ -719,27 +719,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MiR100/mir_glossary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -999,14 +978,14 @@
 <p>Prepare the robot arm. On the teach pendant load the <a href="../mirco_start/#external-control-ur-program">external control UR program</a> program. Power on and start the robot manipulator.</p>
 </li>
 <li>
-<p>Run the <code>MiRco</code> bringup launch file. Wait until the "subscribing to" / "publishing to" messages stop appearing. This means the connection is established
-<div class="highlight"><pre><span></span><code><span class="c1"># hotspot</span>
+<p>Run <code>mirco_bringup.launch</code>. Wait until the "subscribing to" &amp; "publishing to" messages stop appearing. This means the connection is established
+<div class="highlight"><pre><span></span><code><span class="c1"># MiR100 connection over hotspot</span>
 roslaunch<span class="w"> </span>mirco_robot<span class="w"> </span>mirco_bringup.launch
 
-<span class="c1"># outside network</span>
+<span class="c1"># MiR100 connection over outside network</span>
 roslaunch<span class="w"> </span>mirco_robot<span class="w"> </span>mirco_bringup.launch<span class="w"> </span>mir_ip:<span class="o">=</span>&lt;MiR100_IP&gt;
 </code></pre></div>
-If you know <code>MiR100_IP</code> will not be changing you can edit <code>mirco_bringup.launch</code> as:
+If you know <code>MiR100_IP</code> will not be changing (if you set up static IP) you can edit <code>mirco_bringup.launch</code> as:
 <div class="highlight"><pre><span></span><code><span class="c1"># line 7</span>
 &lt;arg<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;mir_ip&quot;</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;&lt;MiR100_IP&gt;&quot;</span><span class="w"> </span><span class="nv">doc</span><span class="o">=</span><span class="s2">&quot;MiR IP address&quot;</span>/&gt;
 
@@ -1020,13 +999,12 @@ roslaunch<span class="w"> </span>mirco_robot<span class="w"> </span>mirco_bringu
 </code></pre></div></p>
 </li>
 <li>
-<p>In another terminal run the <code>MiRco</code> control launch file. 
+<p>In another terminal run <code>mirco_control.launch</code>. 
 <div class="highlight"><pre><span></span><code>roslaunch<span class="w"> </span>mirco_robot<span class="w"> </span>mirco_control.launch
 </code></pre></div></p>
 </li>
 </ul>
 <h3 id="rviz">RViz</h3>
-<p>TODO: check rviz config</p>
 <p>After you started MiRco control, you can send the robot to a goal using the <code>2D Nav Goal</code> tool in RViz.  </p>
 <p>Send the robot to a goal:</p>
 <ul>
@@ -1034,14 +1012,16 @@ roslaunch<span class="w"> </span>mirco_robot<span class="w"> </span>mirco_bringu
 <div class="highlight"><pre><span></span><code>roslaunch mirco_robot view_mirco.launch
 </code></pre></div></li>
 <li>Make sure these RViz settings are set:
-<div class="highlight"><pre><span></span><code>Panels -&gt; Tool Properties -&gt; 2D Nav Goal -&gt; Topic: /mirco_namespace/mir_namespace/move_base_simple/goal
-Panels -&gt; Tool Properties -&gt; 2D Pose Estimate -&gt; Topic: /mirco_namespace/mir_namespace/initialpose
+<div class="highlight"><pre><span></span><code>Panels -&gt; Tool Properties -&gt; 2D Nav Goal -&gt; Topic: /mirco/mir100/move_base_simple/goal
+Panels -&gt; Tool Properties -&gt; 2D Pose Estimate -&gt; Topic: /mirco/mir100/initialpose
 Global Options -&gt; Fixed Frame: map
 </code></pre></div></li>
 <li>use <code>2D Pose Estimate</code> to mark the approximate MiR100 start location</li>
 <li>use <code>2D Nav Goal</code> to send the robot to a goal</li>
 </ul>
+<p>TODO: check rviz config</p>
 <h2 id="mirco_robot-package">mirco_robot package</h2>
+<p>Overview of the main control package.</p>
 <h3 id="launch-files">Launch files</h3>
 <p><strong>mirco_bringup.launch</strong></p>
 <ul>
@@ -1066,7 +1046,7 @@ Global Options -&gt; Fixed Frame: map
 <li>returns to the station and picks up the gear</li>
 <li>goes to an end position </li>
 </ul>
-<p><strong>conveyor.launch</strong>: Demo pick and place application for the manipulator.</p>
+<p><strong>conveyor.launch</strong>: Demo pick and place application for the manipulator. Same as <code>delivery.launch</code> without repositioning of the mobile base.</p>
 <h3 id="config-files">Config files</h3>
 <h4 id="arm_gripper_joint_sourcesyaml">arm_gripper_joint_sources.yaml</h4>
 <p><code>MiRco</code> uses 2 <code>joint_state_publisher</code> nodes. </p>

@@ -710,27 +710,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mir_glossary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -990,14 +969,14 @@
 First thing you have to do after you connect to the MiR web interface is go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Click <code>Load from device</code> and <code>Save changes</code>.</p>
 </div>
 <h2 id="establish-ros-connection">Establish ROS connection</h2>
-<p>MiR100 has a running ROS instance on its internal computer. This means you can:</p>
+<p><code>MiR100</code> has a running ROS instance on its internal computer. This means you can:</p>
 <ul>
 <li>connect to its internal <code>roscore</code></li>
 <li><strong>recommended</strong>: connect using the <code>mir_control</code> package</li>
 </ul>
 <h3 id="internal-roscore">Internal roscore</h3>
 <p><strong>You have to be connected to the robot hotspot (MiR_R****).</strong><br />
-Set the ROS master addres to the address of MiR100 internal roscore and test the connection.</p>
+Set the ROS master addres to the address of <code>MiR100</code> internal roscore and test the connection.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># this needs to be done in every terminal</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.12.20:11311
 <span class="nb">export</span><span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span>&lt;your<span class="w"> </span>IP:<span class="w"> </span><span class="m">192</span>.168.12.***&gt;
@@ -1025,7 +1004,7 @@ rostopic<span class="w"> </span>pub<span class="w"> </span>-r<span class="w"> </
 <span class="s2">    z: 0.2&quot;</span>
 </code></pre></div>
 <h3 id="mir_control-package">mir_control package</h3>
-<p>Using <code>mir_control</code> you can establish a ROS connection over the MiR100 hotspot or the <a href="#connect-mir100-to-a-wifi-network">outside network</a> MiR100 is connected to.</p>
+<p>Using <code>mir_control</code> you can establish a ROS connection over the MiR_R*** hotspot or the <a href="#connect-mir100-to-a-wifi-network">outside network</a> <code>MiR100</code> is connected to.</p>
 <h4 id="hotspot_1">Hotspot</h4>
 <p>If you are connected to the MiR_R**** hotspot:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># launch mir_control</span>
@@ -1048,7 +1027,7 @@ rostopic<span class="w"> </span>pub<span class="w"> </span>-r<span class="w"> </
 <span class="s2">  z: 0.2&quot;</span>
 </code></pre></div>
 <h4 id="outside-network_1">Outside network</h4>
-<p>If you are connected to the same outside network as MiR100:</p>
+<p>If you are connected to the same outside network as <code>MiR100</code>:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># launch mir_control</span>
 roslaunch<span class="w"> </span>mir_control<span class="w"> </span>mir_control.launch<span class="w"> </span>mir_ip:<span class="o">=</span>&lt;MiR100_IP&gt;
 </code></pre></div>

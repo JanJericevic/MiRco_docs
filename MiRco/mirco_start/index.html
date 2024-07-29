@@ -752,27 +752,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MiR100/mir_glossary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1050,22 +1029,22 @@
 
 <h1 id="starting-mirco">Starting MiRco</h1>
 <h2 id="pre-checks">Pre-checks</h2>
-<p>TODO: add pictures</p>
 <p>Before turning on the power, make sure that:</p>
 <ul>
-<li>MiRco battery has enough charge. If not, you can plug in the cable for <a href="#direct-power">direct power</a>. You can check battery status with the button on the charge controller on <code>MiRco</code>'s right side. </li>
-<li>MiR100 battery has enough charge. Check by plugging in the charger. LED lights on the charger will indicate battery status. <a href="../../MiR100/mir_start/#mir100-charging-instructions">See MiR charging instructions</a>.</li>
+<li><code>MiRco</code> battery has enough charge. If not, you can plug in the cable for <a href="#direct-power">direct power</a>. You can check battery status with the button on the charge controller on <code>MiRco</code>'s right side. </li>
+<li><code>MiR100</code> battery has enough charge. Check by plugging in the charger. LED lights on the charger will indicate battery status. <a href="../../MiR100/mir_start/#mir100-charging-instructions">See MiR charging instructions</a>.</li>
 <li>Connection with <code>UR5e</code> controller:<ul>
-<li>For <a href="../mirco_interface/#mirco-industrial-interface"><code>MiRco</code> industrial interface control</a>: connect the red Ethernet cable to the <code>UR5e</code> controller</li>
-<li>For <a href="../mirco_interface/#mirco-ros-interface"><code>MiRco</code> ROS interface control</a>: connect the white Ethernet cable to the <code>UR5e</code> controller</li>
+<li>For <a href="../mirco_interface/#mirco-industrial-interface"><code>MiRco</code> industrial interface control</a>: connect the <strong>red</strong> Ethernet cable to the <code>UR5e</code> controller</li>
+<li>For <a href="../mirco_interface/#mirco-ros-interface"><code>MiRco</code> ROS interface control</a>: connect the <strong>white</strong> Ethernet cable to the <code>UR5e</code> controller</li>
 </ul>
 </li>
-<li>UR5e controller is using the the memory stick with the correct configuration. This is important because URCaps conflicts can impede gripper control. The only URCaps on the controller should be the <strong><em>externalcontrol-x.x.x.urcap</em></strong> and <strong><em>rs485-x.x.x.urcap</em></strong>.</li>
+<li><code>UR5e</code> controller is using the correct configuration. This is important because URCaps conflicts can impede gripper control. The only URCaps on the controller should be the <strong><em>externalcontrol-x.x.x.urcap</em></strong> and <strong><em>rs485-x.x.x.urcap</em></strong>.</li>
 </ul>
+<p>TODO: add pictures</p>
 <h2 id="power">Power</h2>
 <ul>
 <li>turn on the <code>MiRco</code> battery: power switch on the left side of the housing. Wait for the double audio signal</li>
-<li>turn on <code>MiRco PC</code></li>
+<li>turn on <code>MiRco PC</code>: PC power switch inside the housing</li>
 <li>turn on <code>MiR100</code>: <a href="../../MiR100/mir_start/#power">blue button</a> on the front right corner</li>
 <li>turn on <code>UR5e</code>: power button on the teach pendant</li>
 </ul>
@@ -1075,14 +1054,14 @@
 <p>MiR100 internal clock is prone to desynchronization which can mess with the robot control.<br />
 Before controlling the robot, you have to connect to the <a href="../../MiR100/mir_connection/#establish-mir-web-interface-connection">MiR web interface</a> and go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Click <code>Load from device</code> and <code>Save changes</code>.</p>
 </div>
-<p>Get the <code>MiR100_IP</code>. Go to <code>System -&gt; Settings -&gt; WiFi</code>. <code>MiR100_IP</code> is listed under the connection details</p>
+<p>Get the <code>MiR100_IP</code>. In the <a href="../../MiR100/mir_connection/#establish-mir-web-interface-connection">MiR web interface</a> go to <code>System -&gt; Settings -&gt; WiFi</code>. <code>MiR100_IP</code> is listed under the connection details</p>
 <h3 id="mirco-industrial-interface">MiRco industrial interface</h3>
 <p>For industrial interface control we need to enter <code>UR5e_IP</code> address in the MiR web interface.</p>
 <ul>
 <li>Go to <code>System -&gt; Settings -&gt; Features</code> and make sure the <em>Universal Robots Interface</em> is enabled.</li>
 <li>Go to <code>System -&gt; Settings -&gt; UR Interface</code> and enter <code>UR5e_IP</code> address. This IP has to match the IP in the <a href="#ur5e-settings"><code>UR5e</code> network settings</a> bellow.
 <div class="highlight"><pre><span></span><code># Universal Robot IP address:
-192.168.12.254 # example IP
+192.168.12.244 # example IP
 </code></pre></div></li>
 </ul>
 <h2 id="ur5e-settings">UR5e settings</h2>
@@ -1105,26 +1084,27 @@ Host name: 192.168.77.240
 <h4 id="external-control-ur-program">External control UR program</h4>
 <p>Design a UR program to use the <strong><em>externalcontrol-x.x.x.urcap</em></strong> URCap to allow external communication with the manipulator. </p>
 <p>Create a new program and insert the External Control program node into the program tree. Save the program. You will see the <code>Host IP</code> and <code>Custom port</code> that you configured in the previous step.</p>
-<p>There is a program already prepared. To use it load the <code>home/magisterij/janjericevic/mir100_ur5e_ros</code> program. (TODO: rename ur program, screenshot with correct ip)</p>
+<p>There is a program already prepared. To use it load the <code>home/magisterij/janjericevic/mir100_ur5e_ros</code> program. </p>
+<p>TODO: rename ur program, screenshot with correct ip</p>
 <div >
 <img src="../img/ur_external_control.png" alt="UR external control urcap program"/>
 </div>
 
 <h2 id="mirco-charging-instructions">MiRco charging instructions</h2>
-<p>TODO:photos</p>
 <h3 id="direct-power">Direct power</h3>
 <p><code>MiRco</code> can run on direct power from an outlet. This is useful when developing parts of applications where <code>MiRco</code> is stationary. This does not power <code>MiR100</code>.</p>
 <p>Plug the power cable to the direct power plug on the left side of <code>MiRco</code>'s housing, below the power switch.</p>
 <h3 id="start-charging">Start charging</h3>
 <ul>
-<li><code>MiR100</code> charging: see MiR100 <a href="../../MiR100/mir_start/#mir100-charging-instructions">charging instructions</a></li>
+<li><code>MiR100</code> charging: see <a href="../../MiR100/mir_start/#mir100-charging-instructions"><code>MiR100</code> charging instructions</a></li>
 <li><code>MiRco</code> battery: plug in the charger to an outlet. When the charger LED light lights up, plug the charger to the <code>MiRco</code> battery charging plug on the left side of <code>MiRco</code>'s housing, below the power switch</li>
 </ul>
 <h3 id="stop-charging">Stop charging</h3>
 <ul>
-<li><code>MiR100</code>: see MiR100 <a href="../../MiR100/mir_start/#mir100-charging-instructions">charging instructions</a></li>
+<li><code>MiR100</code>: see <a href="../../MiR100/mir_start/#mir100-charging-instructions"><code>MiR100</code> charging instructions</a></li>
 <li><code>MiRco</code> battery: remove the charger from the <code>MiRco</code> battery charging plug</li>
 </ul>
+<p>TODO:photos</p>
 
 
 

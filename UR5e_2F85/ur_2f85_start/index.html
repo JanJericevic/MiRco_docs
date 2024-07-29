@@ -593,27 +593,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MiR100/mir_glossary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -872,18 +851,18 @@
 <h2 id="pre-check">Pre-check</h2>
 <p>Before turning on the power, make sure that:</p>
 <ul>
-<li>The <code>control computer</code> is connected to the UR5e controller with an Ethernet cable</li>
-<li>UR5e controller is using the memory stick with the correct configuration. This is important because URCaps conflicts can impede gripper control. The only URCaps on the controller should be the <strong><em>externalcontrol-x.x.x.urcap</em></strong> and <strong><em>rs485-x.x.x.urcap</em></strong> URCaps.</li>
+<li>The <code>control PC</code> is connected to the UR5e controller with an Ethernet cable. <code>control PC</code> is the computer you use to control the manipulator with ROS.</li>
+<li><code>UR5e</code> controller is using the correct configuration. This is important because URCaps conflicts can impede gripper control. The only URCaps on the controller should be the <strong><em>externalcontrol-x.x.x.urcap</em></strong> and <strong><em>rs485-x.x.x.urcap</em></strong> URCaps.</li>
 </ul>
 <h2 id="power">Power</h2>
-<p>To turn on UR5e press the power button on the teach pendant. Gripper gets its power from the robot manipulator.</p>
+<p>To turn on <code>UR5e</code> press the power button on the teach pendant. Gripper gets its power from the robot manipulator.</p>
 <h2 id="ur5e-settings">UR5e settings</h2>
-<p>Go to <code>Settings -&gt; System -&gt; Network</code> and configure the network settings. This is the <code>UR5e_IP</code> address that the <code>control computer</code> uses to control the arm.</p>
+<p>Go to <code>Settings -&gt; System -&gt; Network</code> and configure the network settings. This is the <code>UR5e_IP</code> address that the <code>control PC</code> uses to control the arm.</p>
 <div class="highlight"><pre><span></span><code># example configuration
 IP address: 192.168.77.245
 Subnet mask: 255.255.255.0
 </code></pre></div>
-<p>Go to <code>Installation -&gt; URCaps -&gt; External control</code> and configure the network settings for external control. This is the <code>control computer</code> IP address that <code>UR5e</code> uses to know where the control is coming from.</p>
+<p>Go to <code>Installation -&gt; URCaps -&gt; External control</code> and configure the network settings for external control. This is the <code>control PC</code> IP address that <code>UR5e</code> uses to know where the control is coming from.</p>
 <div class="highlight"><pre><span></span><code># example configuration
 Host IP: 192.168.77.240
 Custom port: 50002

@@ -761,27 +761,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mir_glossary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1067,11 +1046,11 @@
 
 
 <h1 id="ros-control">ROS control</h1>
-<p>This page describes the ROS control for the <strong>MiR100 robot only</strong> . To control the mobile base as part of the MiRco mobile manipulator see <a href="../../MiRco/mirco_ros_control/">MiRco ROS control</a>.  </p>
-<p>To establish a ROS connection with MiR100 see <a href="../mir_connection/">Connect to MiR100</a>.</p>
+<p>This page describes the ROS control for the <strong><code>MiR100</code> robot only</strong> . To control the mobile base as part of the <code>MiRco</code> mobile manipulator see <a href="../../MiRco/mirco_ros_control/"><code>MiRco</code> ROS control</a>.  </p>
+<p>To establish a ROS connection with <code>MiR100</code> see <a href="../mir_connection/">Connect to <code>MiR100</code></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>MiR100 internal clock is prone to desynchronization which can mess with the robot control.<br />
+<p><code>MiR100</code> internal clock is prone to desynchronization which can mess with the robot control.<br />
 Before controlling the robot, you have to connect to the <a href="../mir_connection/#establish-mir-web-interface-connection">MiR web interface</a> and go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Click <code>Load from device</code> and <code>Save changes</code>.</p>
 </div>
 <div class="admonition note">
@@ -1087,28 +1066,28 @@ Before controlling the robot, you have to connect to the <a href="../mir_connect
 </ul>
 <h2 id="usage">Usage</h2>
 <h3 id="start-mir_control">Start mir_control</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># hotspot</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># MiR100 connection over hotspot</span>
 roslaunch<span class="w"> </span>mir_control<span class="w"> </span>mir_control.launch
 
-<span class="c1"># outside network</span>
+<span class="c1"># MiR100 connection over outside network</span>
 roslaunch<span class="w"> </span>mir_control<span class="w"> </span>mir_control.launch<span class="w"> </span>mir_ip:<span class="o">=</span>&lt;MiR100_IP&gt;
 </code></pre></div>
 <h3 id="rviz">RViz</h3>
 <p>TODO: check, make rviz config</p>
 <p>After you started <code>mir_control</code>, you can send the robot to a goal using the <code>2D Nav Goal</code> tool in RViz.  </p>
 <p>Make sure to set these RViz settings:</p>
-<div class="highlight"><pre><span></span><code>Panels -&gt; Tool Properties -&gt; 2D Nav Goal -&gt; Topic: /mir_namespace/move_base_simple/goal
-Panels -&gt; Tool Properties -&gt; 2D Pose Estimate -&gt; Topic: /mir_namespace/initialpose
+<div class="highlight"><pre><span></span><code>Panels -&gt; Tool Properties -&gt; 2D Nav Goal -&gt; Topic: /mir100/move_base_simple/goal
+Panels -&gt; Tool Properties -&gt; 2D Pose Estimate -&gt; Topic: /mir100/initialpose
 Global Options -&gt; Fixed Frame: map
 </code></pre></div>
 <p>Send the robot to a goal:</p>
 <ul>
-<li>use <code>2D Pose Estimate</code> to mark the approximate MiR100 start location</li>
+<li>use <code>2D Pose Estimate</code> to mark the approximate <code>MiR100</code> start location</li>
 <li>use <code>2D Nav Goal</code> to send the robot to a goal</li>
 </ul>
 <h2 id="mir_control-package">mir_control package</h2>
 <p>The main control package. This is a wrapper around the <code>mir_driver</code> package. For details about <code>mir_driver</code> see the <a href="https://github.com/DFKI-NI/mir_robot">GitHub page</a>.</p>
-<p><code>mir_control</code> starts another <code>roscore</code> on the host computer, connecting to the MiR100 internal <code>roscore</code> over <code>ROS Bridge</code>. See the <a href="../../MiRco/mirco_interface/#mirco-ros-interface">MiRco ROS schematic</a> for a visual aid of the connection.  </p>
+<p><code>mir_control</code> starts another <code>roscore</code> on the host computer, connecting to the <code>MiR100</code> internal <code>roscore</code> over <code>ROS Bridge</code>. See the <a href="../../MiRco/mirco_interface/#mirco-ros-interface">MiRco ROS schematic</a> for a visual aid of the connection.  </p>
 <p><code>mir_control</code> adds a control node, a python robot class, a goal teacher, ROS services and <a href="../mir_rest_api/">REST API integration</a>. This effectively enables the use of all web interface functions.</p>
 <h3 id="launch-files">Launch files</h3>
 <h4 id="mir_controllaunch"><code>mir_control.launch</code></h4>
@@ -1118,7 +1097,7 @@ Global Options -&gt; Fixed Frame: map
 </ul>
 <h3 id="nodes">Nodes</h3>
 <h4 id="mir_control_nodepy"><code>mir_control_node.py</code></h4>
-<p>The main control node for MiR100. Initializes a <code>MiR100</code> python object. See <code>mir100_class.py</code> script for details on the object.</p>
+<p>The main control node for <code>MiR100</code>. Initializes a <code>MiR100</code> python object. See <code>mir100_class.py</code> script for details on the object.</p>
 <h3 id="config-files">Config files</h3>
 <h4 id="target_goalsyaml">target_goals.yaml</h4>
 <p>When you run the control node, the positions in the current MiR map are saved in this file.<br />
@@ -1151,8 +1130,8 @@ If <code>markers.yaml</code> already contains a marker with the same name (this 
 <h3 id="services">Services</h3>
 <p>Services are established with the <code>mir_control_node</code> or whenever you create a <code>MiR100</code> object defined in <code>mir100_class.py</code>.</p>
 <h4 id="save_mobile_goal-todo-check-if-works-correctly">save_mobile_goal (TODO: check if works correctly)</h4>
-<p>Saves the current MiR100 pose under selected name. The pose is saved in <code>/config/target_goals.yaml</code>.  </p>
-<p>If the current MiR100 map does not include a position or marker with the same name, a position with the selected name is created and saved to the current MiR map. If a position or marker with the same name already exists, they are overwritten with the current MiR100 pose.</p>
+<p>Saves the current <code>MiR100</code> pose under selected name. The pose is saved in <code>/config/target_goals.yaml</code>.  </p>
+<p>If the current <code>MiR100</code> map does not include a position or marker with the same name, a position with the selected name is created and saved to the current MiR map. If a position or marker with the same name already exists, they are overwritten with the current <code>MiR100</code> pose.</p>
 <h4 id="send_to_goal">send_to_goal</h4>
 <p>Send robot to a goal saved in <code>/config/target_goals.yaml</code>.  </p>
 <h4 id="get_markers">get_markers</h4>
@@ -1164,7 +1143,7 @@ If <code>markers.yaml</code> already contains a marker with the same name (this 
 Currently only VL type markers are supported.  </p>
 <h2 id="mir_joy_teleop-package">mir_joy_teleop package</h2>
 <p>A package for joystick control.</p>
-<p>As with <a href="../mir_connection/#establish-ros-connection">connecting to the robot</a>, you can send the joystick commands directly to the MiR100 internal <code>roscore</code> or use it with the <code>mir_control</code> package.</p>
+<p>As with <a href="../mir_connection/#establish-ros-connection">connecting to the robot</a>, you can send the joystick commands directly to the <code>MiR100</code> internal <code>roscore</code> or use it with the <code>mir_control</code> package.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When using <code>mir_control</code> we send <code>geometry_msgs/Twist</code> type messages instead of <code>geometry_msgs/TwistStamped</code> to the <code>/cmd_vel</code> topic. That is because the <code>mir_driver</code> package expects messages of type <code>geometry_msgs/Twist</code> on the <code>/cmd_vel</code> topic and converts them to <code>geometry_msgs/TwistStamped</code> messages before sending the commands to the robot.</p>

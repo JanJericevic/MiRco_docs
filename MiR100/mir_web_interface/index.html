@@ -761,27 +761,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mir_glossary/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Glossary
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1067,11 +1046,11 @@
 
 
 <h1 id="mir-web-interface">MiR web interface</h1>
-<p>This is an overview of the MiR web interface. Here you will find the most common MiR web interface functions. This <strong>is not</strong> a complete how-to on the use of the web interface capabilities. For detailed information about the interface see the <em>MiR robot Reference Guide</em> pdf. (TODO) </p>
-<p>To establish a connection to the MiR web interface see <a href="../mir_connection/">Connect to MiR100</a>.</p>
+<p>This is an overview of the MiR web interface. Here you will find the most common MiR web interface functions. This <strong>is not</strong> a complete how-to on the use of the web interface capabilities. For detailed information about the interface see the <em>MiR robot Reference Guide</em> pdf. </p>
+<p>To establish a connection to the MiR web interface see <a href="../mir_connection/">Connect to <code>MiR100</code></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>MiR100 internal clock is prone to desynchronization which can mess with the robot control.<br />
+<p><code>MiR100</code> internal clock is prone to desynchronization which can mess with the robot control.<br />
 First thing you have to do after you connect to the MiR web interface is go to <code>System -&gt; Settings -&gt; Date &amp; Time</code> and synchronize the internal clock. Click <code>Load from device</code> and <code>Save changes</code>.</p>
 </div>
 <h2 id="interface-overview">Interface overview</h2>
@@ -1090,7 +1069,7 @@ number of widgets, each representing a feature in the system, such as a particul
 <p>Select <code>Dashboards</code> to open the list of dashboards, and select the <code>Create dashboard</code> button to open the dashboard designer. Alternatively, you can select an existing dashboard from the list to edit. Design the dashboard by selecting widgets from the menus in the top bar. Resize the widgets by pulling the arrow in the lower right corner and rearrange their order by selecting and dragging them. Some widgets require further settings. For example, you must select a particular mission for mission buttons. To do this, select the pen icon in the lower left corner and select the wanted action.</p>
 <p><img alt="web interface dashboard designer" src="../img/interface__create_dashboard.jpg" /></p>
 <h5 id="example-dashboards">Example dashboards</h5>
-<p>In the dashboards list you can find the <em>FE_standard</em> and <em>FE_joysticks</em> dashboards. <em>FE_standard</em> is a template for a standard use case and is a good starting place for designing your own. <em>FE_joysticks</em> is a dashboard that contains only joystick control widgets where each joystick has a different speed setting. This is practical for manual control of the robot where you want to use different speeds - slower for narrower areas, and faster for open space.</p>
+<p>In the dashboards list you can find the <em>FE_standard</em> and <em>FE_joysticks</em> dashboards. <em>FE_standard</em> is a template for a standard use case and is a good starting place for designing your own. <em>FE_joysticks</em> is a dashboard that contains only joystick control widgets where each joystick has a different speed setting. This is practical for manual control of the robot where you want to use different speeds - slower for narrower areas, and faster for open space. The best way to use the joystick is to access the web interface on your phone and guide the robot with your finger.</p>
 <p>TODO: joystick dashboard screenshot</p>
 <h3 id="setup-menu">Setup menu</h3>
 <h4 id="missions-submenu">Missions submenu</h4>
@@ -1181,7 +1160,7 @@ each group.</li>
 </ul>
 <h5 id="wifi-settings">WiFi settings</h5>
 <ul>
-<li><code>WiFi -&gt; Add connection</code>: used to connect MiR100 to an outside network. Select the network you wish to connect and fill in the required information. <code>MiR100_IP</code> is displayed under the network connection details. When the user and MiR100 are connected to the same outside network, you can use this IP to access the web interface.</li>
+<li><code>WiFi -&gt; Add connection</code>: used to connect <code>MiR100</code> to an outside network. Select the network you wish to connect and fill in the required information. <code>MiR100_IP</code> is displayed under the network connection details. When the user and <code>MiR100</code> are connected to the same outside network, you can use this IP to access the web interface.</li>
 </ul>
 <h5 id="date-time-settings">Date &amp; Time settings</h5>
 <ul>
@@ -1208,15 +1187,15 @@ software and see a list of all previous versions installed on the robot</li>
 <h2 id="control-the-robot">Control the robot</h2>
 <h3 id="send-to-goal">Send to goal</h3>
 <p>TODO:check these instruction</p>
-<p>The main way to control MiR100 is through missions, however you can also send the robot to individual goals.  </p>
+<p>The main way to control <code>MiR100</code> is through missions, however you can also send the robot to individual goals.  </p>
 <ul>
-<li>Send to target: use the map to send MiR100 to a goal not predefined (as a position or marker) on the active mao. Click on the position on the map and use your mouse to set the orientation</li>
+<li>Send to target: use the map to send <code>MiR100</code> to a goal not predefined (as a position or marker) on the active map. Click on the position on the map and use your mouse to set the orientation</li>
 <li>Send to position: select the chosen position on the active map and select <code>Go TO</code></li>
 <li>Send to marker: select the chosen marker on the active map and select <code>Go TO</code></li>
 </ul>
 <p>Each of these command will add an action to the mission queue. You can append them or overwrite the queue.</p>
 <h3 id="manual-control">Manual control</h3>
-<p>The easiest way to move MiR100 to a desired goal is to manually control the robot.</p>
+<p>The easiest way to move <code>MiR100</code> to a desired goal is to manually control the robot.</p>
 <p>The web interface has an onscreen joystick in the top bar of the interface but as mentioned, this is not the recommended method since the robot speed when using the top bar joystick is fixed. This can cause problems in narrow areas. Instead use the <em>FE_joysticks</em> <a href="#example-dashboards">dashboard</a> - it includes multiple onscreen joystick widgets with different speeds. </p>
 <p>The best way to use the joystick is to access the web interface on your phone and guide the robot with your finger.</p>
 
