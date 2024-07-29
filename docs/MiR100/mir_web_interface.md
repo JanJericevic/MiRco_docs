@@ -141,10 +141,10 @@ Settings contains the robot's parameter settings where the settings are divided 
 - `Planner -> Path deviation`: the maximum distance in meters that the robot's local plan is allowed to deviate from the global plan.
 
 ##### UR interface settings
-- `UR interface -> Universal Robot IP address`: the IP address of the UR robot. Used with the [industrial interface control](../MiRco/mirco_control.md/#mirco-industrial-interface)
+- `UR interface -> Universal Robot IP address`: the IP address of the UR robot. Used with the [`MiRco` industrial interface control](../MiRco/mirco_start.md/#mirco-industrial-interface).
 
 ##### Features settings
-- `Features -> Universal Robots Interface`: enable the running UR programs from inside MiR missions. Used with the [industrial interface control](../MiRco/mirco_control.md/#mirco-industrial-interface)
+- `Features -> Universal Robots Interface`: enable the running UR programs from inside MiR missions. Used with the [`MiRco` industrial interface control](../MiRco/mirco_start.md/#mirco-industrial-interface).
 
 ##### WiFi settings
 - `WiFi -> Add connection`: used to connect `MiR100` to an outside network. Select the network you wish to connect and fill in the required information. `MiR100_IP` is displayed under the network connection details. When the user and `MiR100` are connected to the same outside network, you can use this IP to access the web interface.
