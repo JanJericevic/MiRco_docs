@@ -101,7 +101,7 @@ marker_name:
 Services are established with the `mir_control_node` or whenever you create a `MiR100` object defined in `mir100_class.py`.
 
 #### save_mobile_goal (TODO: check if works correctly)
-Saves the current `MiR100` pose under selected name. The pose is saved in `/config/target_goals.yaml`.  
+Saves the current `MiR100` pose under selected name. The pose is saved both in the web interface and in `/config/target_goals.yaml`.  
 
 If the current `MiR100` map does not include a position or marker with the same name, a position with the selected name is created and saved to the current MiR map. If a position or marker with the same name already exists, they are overwritten with the current `MiR100` pose.
 
