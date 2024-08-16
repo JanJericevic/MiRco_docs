@@ -38,3 +38,31 @@
   margin-right: auto;
   width: 80%;
 }
+
+@media print {
+  /* Ensure all details elements are collapsed during print */
+  details {
+    display: block;
+  }
+
+  details[open] {
+    display: block;
+    open: false;
+  }
+
+  details > summary {
+    display: block;
+  }
+
+  details[open] > *:not(summary) {
+    display: none !important;
+  }
+
+  .doc-function {
+    page-break-inside: avoid;
+  }
+  
+  #print-site-page .nav-section-title {
+    page-break-after: avoid;
+  }
+}
