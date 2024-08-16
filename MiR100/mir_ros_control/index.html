@@ -1130,7 +1130,7 @@ If <code>markers.yaml</code> already contains a marker with the same name (this 
 <h3 id="services">Services</h3>
 <p>Services are established with the <code>mir_control_node</code> or whenever you create a <code>MiR100</code> object defined in <code>mir100_class.py</code>.</p>
 <h4 id="save_mobile_goal-todo-check-if-works-correctly">save_mobile_goal (TODO: check if works correctly)</h4>
-<p>Saves the current <code>MiR100</code> pose under selected name. The pose is saved in <code>/config/target_goals.yaml</code>.  </p>
+<p>Saves the current <code>MiR100</code> pose under selected name. The pose is saved both in the web interface and in <code>/config/target_goals.yaml</code>.  </p>
 <p>If the current <code>MiR100</code> map does not include a position or marker with the same name, a position with the selected name is created and saved to the current MiR map. If a position or marker with the same name already exists, they are overwritten with the current <code>MiR100</code> pose.</p>
 <h4 id="send_to_goal">send_to_goal</h4>
 <p>Send robot to a goal saved in <code>/config/target_goals.yaml</code>.  </p>

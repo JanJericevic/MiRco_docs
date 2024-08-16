@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -222,6 +227,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -232,6 +250,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROS workspace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Docker engine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -730,6 +827,76 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROS workspace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Docker engine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building the image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the image
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -744,9 +911,149 @@
                   
 
 
-  <h1>Installation</h1>
+<h1 id="installation">Installation</h1>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><strong><code>ROS noetic:</code></strong> full desktop version is preferred. Can install other variant dependant on your use case.</li>
+<li><strong><code>rosdep:</code></strong> command-line tool for installing system dependencies. Follow these install <a href="http://wiki.ros.org/rosdep">instructions</a>.</li>
+<li><strong><code>(optional) Docker:</code></strong> allow system flexibility. Viable option for no OS wide ROS install, or for working with multiple ROS versions. See <a href="#working-with-docker">Working with Docker</a> for details. </li>
+</ul>
+<h2 id="ros-workspace">ROS workspace</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># create a catkin workspace</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/MiRco/ws/src<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/src
 
-<p><strong>NOTE: this page is currently under development.</strong></p>
+<span class="c1"># clone mir_robot, robotiq_2f85 and this repository into the catkin workspace</span>
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>noetic<span class="w"> </span>https://github.com/JanJericevic/mir_robot.git<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>noetic-devel<span class="w"> </span>https://github.com/JanJericevic/robotiq_2f85.git<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>main<span class="w"> </span>https://github.com/JanJericevic/MiRco_robot.git
+
+<span class="c1"># update and install packages</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>python3-catkin-lint<span class="w"> </span>python3-catkin-tools<span class="w"> </span>ros-noetic-moveit<span class="w"> </span>ros-noetic-ur-robot-driver<span class="w"> </span>ros-noetic-ur-calibration<span class="w"> </span>ros-noetic-ur-calibration-dbgsym
+
+<span class="c1"># use rosdep to install all dependencies</span>
+<span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>rosdep<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>-i<span class="w"> </span>-y<span class="w"> </span>--rosdistro<span class="w"> </span>noetic<span class="w"> </span>
+
+<span class="c1"># build all the packages in the catkin workspace</span>
+<span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.bash<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/src<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>catkin_init_workspace<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>catkin_make<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>RelWithDebugInfo
+
+<span class="c1"># source the workspace and add it to the .bashrc</span>
+<span class="nb">source</span><span class="w"> </span>~/MiRco/ws/devel/setup.bash<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/MiRco/ws/devel/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<h2 id="working-with-docker">Working with Docker</h2>
+<p>Docker containers allow you flexibility in your setup:
+- reproducibility of environments/projects
+- no need for OS wide ROS install
+- possibility of switching between ROS versions </p>
+<h3 id="install-docker-engine">Install Docker engine</h3>
+<p>Full install instructions are available at Dockers <a href="https://docs.docker.com/engine/install/ubuntu/">official website</a>.
+Make sure old versions od Docker engine are <a href="https://docs.docker.com/engine/install/ubuntu/#uninstall-docker-engine">uninstalled</a>.</p>
+<h4 id="optional-docker-post-installation-steps">Optional Docker post installation steps</h4>
+<p>All optional installation steps are available at Dockers <a href="https://docs.docker.com/engine/install/linux-postinstall/">official website</a>.<br />
+Useful post installation step is to manage Docker as a non sudo user. This allow the omission of <code>sudo</code> in front of docker commands. When allowing this make sure to be aware of how this <a href="https://docs.docker.com/engine/security/#docker-daemon-attack-surface">impacts security of your system</a>.</p>
+<h3 id="building-the-image">Building the image</h3>
+<p>If all you want is to connect to the MiR100 <code>roscore</code> for monitoring all you need is a ROS Docker image.<br />
+We will build a custom ROS Docker image, complete with the same ROS packages as a local install, so you have a choice of running the project locally or using Docker containers.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># download the desired packages to the src of your workspace</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/MiRco/ws/src<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/src
+
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>noetic<span class="w"> </span>https://github.com/JanJericevic/mir_robot.git<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>noetic-devel<span class="w"> </span>https://github.com/JanJericevic/robotiq_2f85.git<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>main<span class="w"> </span>https://github.com/JanJericevic/MiRco_robot.git
+
+<span class="c1"># move the Dockerfile and docker-compose.yaml in MiRco_robot folder to the src folder</span>
+mv<span class="w"> </span>~/MiRco/ws/src/MiRco_robot/Dockerfile<span class="w"> </span>~/MiRco/ws/src<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>~/MiRco/ws/src/MiRco_robot/docker-compose.yaml<span class="w"> </span>~/MiRco/ws/src/docker-compose.yaml
+
+<span class="c1"># build the Docker image</span>
+<span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/src
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>mirco_docker<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">MYUID</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">MYGID</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">MYUSER</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-nu<span class="k">)</span><span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">MYGROUP</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-ng<span class="k">)</span><span class="w"> </span>.
+
+<span class="c1"># list your built Docker images</span>
+<span class="c1"># verify that your &lt;image-name&gt; is among the listed images</span>
+docker<span class="w"> </span>images
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you're on a machine with no OS wide ROS install and don't have a <code>catkin ws</code> the steps remain the same. Move the <code>Dockerfile</code> to the root directory of your packages, then build the Docker image in that root directory. The build commands remain the same.</p>
+</div>
+<p>To avoid permissions issues with shared files between the host computer and the image container, we create a user with <code>sudo</code> permissions inside the image (this is especially relevant during <a href="#volume-mounting">development</a>). User profile can be changed when building the image (the <code>build-arg</code> listed above) and inside the <code>Dockerfile</code>.<br />
+The current profile settings are: </p>
+<blockquote>
+<p><strong><em>username</em></strong>: same as the host username that built the image<br />
+<strong><em>password</em></strong>: same as the username</p>
+</blockquote>
+<p>The <code>Dockerfile</code> creates a <code>catkin workspace</code> at <code>/home/&lt;your-user&gt;/ws</code> inside the image. The workspace is also set as the work directory of the image so it will be the starting point of every new container.</p>
+<p>Depending on your use case you will use the Docker image during development (you plan to regularly modify your codebase) or you will only use it for deployment. For deployment you only need to copy your files once, which is what we have done until now. For a development setup see the <a href="#volume-mounting">volume mounting</a> section.</p>
+<h3 id="running-the-image">Running the image</h3>
+<p>You can start a container with the MiRco image using the <code>docker-compose.yaml</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># start the docker container in detached mode</span>
+<span class="nb">cd</span><span class="w"> </span>~/MiRco/ws/src<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+
+<span class="c1"># open a terminal in the container</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mirco_container<span class="w"> </span>bash
+</code></pre></div>
+<p>This Docker compose configuration enables:</p>
+<ul>
+<li>GUI usage inside the container (X11 forwarding)</li>
+<li>NVIDIA GPU utilization (host needs NVIDIA Container Toolkit)</li>
+<li>device usage inside the container (for joysticks)</li>
+<li>mounts the src folder of your workspace directory as a volume for persistent memory during development  </li>
+</ul>
+<p>Check the <code>docker-compose.yaml</code> file for details how each function is enabled.<br />
+If these functions are not needed, configure the <code>docker-compose.yaml</code> to your needs.</p>
+<h4 id="gui-applications">GUI applications</h4>
+<p>If you have problems using GUI applications inside the container try to change access permissions to the X server. The easiest is to grant access to everyone, or you can <a href="https://manpages.ubuntu.com/manpages/lunar/en/man1/xhost.1.html">specify</a> a specific user.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># disables access control</span>
+xhost<span class="w"> </span>+
+
+<span class="c1"># grants access to specific user</span>
+xhost<span class="w"> </span>+local:&lt;user-name&gt;
+<span class="c1"># or</span>
+xhost<span class="w"> </span>+SI:local:&lt;user-name&gt;
+</code></pre></div>
+<p>Changes to the X server access only persist until the next logout/login, but it is best practice to enable back the access control once you're finished working with the container.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># enables access control</span>
+xhost<span class="w"> </span>-
+</code></pre></div>
+<h4 id="nvidia">NVIDIA</h4>
+<p>Users of NVIDIA GPUs can download the <a href="https://github.com/NVIDIA/nvidia-container-toolkit">NVIDIA Container Toolkit</a>, which allows them to build GPU accelerated containers or in some cases solves display issues if the above mentioned setup is not working. The "Graphics inside Docker Containers" paragraph of this <a href="https://roboticseabass.com/2021/04/21/docker-and-ros/"> ROS&amp;Docker guide</a> describes working with such images.</p>
+<h4 id="volume-mounting">Volume mounting</h4>
+<p>For development we want persistent files that are shared between the host machine and the containers, files that can be changed both from the host side and from inside the container, in a setup which does not require us to rebuild the image every time we modify our code. We achieve this using <a href="https://docs.docker.com/storage/volumes/">volumes</a>. To achieve the necessary permissions we create a <code>sudo</code> user inside the image (see "<a href="#building-the-image">Building the image</a>" section).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mounted files are available only at runtime. Any files needed for building the image should be copied before then.</p>
+</div>
+<h4 id="input-devices">Input devices</h4>
+<p>Some input devices require you to change their permissions so that they become accessible to your application (e.g. <a href="http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick">"Configuring the Joystick"</a> section of this ROS tutorial). To avoid repetative changing of permissions every time you plug them in, you can create a <code>udev</code> rule.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># with the desired input device unplugged</span>
+<span class="c1"># list the input devices on your host</span>
+$<span class="w"> </span>ls<span class="w"> </span>/dev/input
+by-id<span class="w">    </span>event0<span class="w">  </span>event10<span class="w">  </span>event3<span class="w">  </span>event5<span class="w">  </span>event7<span class="w">  </span>event9<span class="w">  </span>mouse0<span class="w">  </span>mouse2
+by-path<span class="w">  </span>event1<span class="w">  </span>event11<span class="w">  </span>event2<span class="w">   </span>event4<span class="w">  </span>event6<span class="w">  </span>event8<span class="w">  </span>mice<span class="w">    </span>mouse1
+
+<span class="c1"># plug in the desired input device</span>
+<span class="c1"># again list the input devices to see your device name</span>
+$<span class="w"> </span>ls<span class="w"> </span>/dev/input
+by-id<span class="w">    </span>event1<span class="w">   </span>event20<span class="w">  </span>event5<span class="w">  </span>event8<span class="w">  </span>mice<span class="w">    </span>mouse2
+by-path<span class="w">  </span>event10<span class="w">  </span>event19<span class="w">  </span>event3<span class="w">   </span>event6<span class="w">  </span>event9<span class="w">  </span>mouse0
+event0<span class="w">   </span>event11<span class="w">  </span>event2<span class="w">   </span>event4<span class="w">   </span>event7<span class="w">  </span>js0<span class="w">     </span>mouse1
+</code></pre></div>
+<p>Using the above method, we find that our device name is <code>js0</code>. Now we create a <code>udev</code> rule. Add a file <code>/etc/udev/rules.d/99-userdev-input.rules</code> with:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&quot;js0&quot;</span>,<span class="w"> </span><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;input&quot;</span>,<span class="w"> </span><span class="nv">ACTION</span><span class="o">==</span><span class="s2">&quot;add&quot;</span>,<span class="w"> </span><span class="nv">RUN</span><span class="o">+=</span><span class="s2">&quot;/usr/bin/setfacl -m o:rw </span><span class="nv">$env</span><span class="s2">{DEVNAME}&quot;</span>
+</code></pre></div>
+<p>This udev rule uses <code>ACL</code> to set the read-write permissions of the input device <code>js0</code> for the <code>others</code> group. You can modify the rule using <code>ACL</code> commands.</p>
 
 
 
