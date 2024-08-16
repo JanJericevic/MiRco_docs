@@ -1,5 +1,8 @@
 # MiRco documentation
-<!-- <img src="MiRco/pictures/MiRco.png" style="height:300px" > -->
+
+<div class="index_image">
+<img src="./img/mirco_collage2.png" alt="MiRco robot"/>
+</div>
 
 This documentation contains instructions for working with the `MiRco` mobile manipulator.  
 `MiRco` consists of `MiR100` autonomous mobile robot, `UR5e` manipulator arm and `Robotiq 2F-85`  gripper.

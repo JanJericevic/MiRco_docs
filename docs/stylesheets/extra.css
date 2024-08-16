@@ -18,6 +18,13 @@
   width: 60%;
 }
 
+.index_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
 .image_ver {
   display: block;
   margin-left: auto;
