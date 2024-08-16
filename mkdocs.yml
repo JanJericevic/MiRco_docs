@@ -22,7 +22,6 @@ nav:
     - Overview: UR5e_2F85/ur_2f85_overview.md
     - Starting UR5e & Robotiq 2F-85: UR5e_2F85/ur_2f85_start.md
     - ROS control: UR5e_2F85/ur_2f85_ros_control.md
-
 theme:
   name: material
   logo: img/robolab_crop.png
@@ -34,24 +33,25 @@ theme:
     - navigation.footer
     # - navigation.tabs
     # - navigation.tabs.sticky
-
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - toc:
       toc_depth: 3
-plugins:
-- search
-- mkdocstrings:
-    enabled: true
-    handlers:
-        python:
-          paths: [docs/MiR100/mir_rest_api]
-          options:
-            docstring_style: sphinx
-
 extra_css: 
   - stylesheets/extra.css
-
-
+plugins:
+  - search
+  - mkdocstrings:
+      enabled: true
+      handlers:
+          python:
+            paths: [docs/MiR100/mir_rest_api]
+            options:
+              docstring_style: sphinx
+  - print-site:
+      enabled: true
+      print_page_title: 'MiRco documentation'
+      add_table_of_contents: false
+      enumerate_headings: false

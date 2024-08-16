@@ -16,9 +16,6 @@ This documentation contains instructions for working with the `MiRco` mobile man
 -  `MiR100` robot:
     - software version 2.13.3.2
 - `UR5e` manipulator:
-    - Polyscope version: TODO
-    - externalcontrol URCap:TODO
-    - rs485 URCap: TODO
 - `Robotiq 2F-85` gripper
 
 ## Acknowledgements

@@ -35,7 +35,7 @@ Select `Dashboards` to open the list of dashboards, and select the `Create dashb
 ##### Example dashboards
 In the dashboards list you can find the *FE_standard* and *FE_joysticks* dashboards. *FE_standard* is a template for a standard use case and is a good starting place for designing your own. *FE_joysticks* is a dashboard that contains only joystick control widgets where each joystick has a different speed setting. This is practical for manual control of the robot where you want to use different speeds - slower for narrower areas, and faster for open space. The best way to use the joystick is to access the web interface on your phone and guide the robot with your finger.
 
-TODO: joystick dashboard screenshot
+<!-- TODO: joystick dashboard screenshot -->
 
 ### Setup menu
 #### Missions submenu
@@ -176,7 +176,7 @@ software and see a list of all previous versions installed on the robot
 
 ## Control the robot
 ### Send to goal
-TODO:check these instruction
+<!-- TODO:check these instruction -->
 
 The main way to control `MiR100` is through missions, however you can also send the robot to individual goals.  
 

@@ -60,7 +60,7 @@ Global Options -> Fixed Frame: map
 - use `2D Pose Estimate` to mark the approximate MiR100 start location
 - use `2D Nav Goal` to send the robot to a goal
 
-TODO: check rviz config
+<!-- TODO: check rviz config -->
 
 ## mirco_robot package
 Overview of the main control package.

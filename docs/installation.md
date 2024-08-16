@@ -81,7 +81,7 @@ docker images
 !!! note
     If you're on a machine with no OS wide ROS install and don't have a `catkin ws` the steps remain the same. Move the `Dockerfile` to the root directory of your packages, then build the Docker image in that root directory. The build commands remain the same.
 
-To avoid permissions issues with shared files between the host computer and the image container, we create a user with `sudo` permissions inside the image (this is especially relevant during [development](#volume-mounting)). User profile can be changed when building the image (the `build-arg` listed above) and inside the `Dockerfile`.  
+To avoid permissions issues with shared files between the host computer and the image container, we create a user with `sudo` permissions inside the image (this is especially relevant during development). User profile can be changed when building the image (the `build-arg` listed above) and inside the `Dockerfile`.  
 The current profile settings are: 
 
 > ***username***: same as the host username that built the image  

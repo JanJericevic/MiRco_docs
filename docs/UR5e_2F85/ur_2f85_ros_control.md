@@ -10,16 +10,16 @@ Before controlling the robot follow the [Starting UR5e & Robotiq 2F-85](./ur_2f8
 - **`robotiq_2f85:`** Robotiq ROS driver, specifically for `2F-85` gripper. Fork of the [original driver](https://github.com/TAMS-Group/robotiq) 
 
 ## Usage
-TODO: test
+<!-- TODO: test -->
 
 ## ur5e_2f85 package
 The main control package
 
 ### Launch files
-TODO: test
+<!-- TODO: test -->
 
 ### Nodes
-TODO: test
+<!-- TODO: test -->
 
 ### Config files
 #### ur5e_saved_poses.yaml

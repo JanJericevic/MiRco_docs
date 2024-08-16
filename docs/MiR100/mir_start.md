@@ -25,4 +25,4 @@ When you turn on the robot it could be in emergency stop. This is indicated by t
 - **First turn off the rocker switch above the charging port**
 - Remove the charging cable and put on the charging port cover
 
-TODO:photos
+<!-- TODO:photos -->

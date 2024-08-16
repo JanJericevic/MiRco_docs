@@ -27,7 +27,7 @@ roslaunch mir_control mir_control.launch mir_ip:=<MiR100_IP>
 ```  
 
 ### RViz
-TODO: check, make rviz config
+<!-- TODO: check, make rviz config -->
 
 After you started `mir_control`, you can send the robot to a goal using the `2D Nav Goal` tool in RViz.  
 

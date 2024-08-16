@@ -10,7 +10,7 @@ Before turning on the power, make sure that:
     - For [`MiRco` ROS interface control](./mirco_interface.md/#mirco-ros-interface): connect the **white** Ethernet cable to the `UR5e` controller
 - `UR5e` controller is using the correct configuration. This is important because URCaps conflicts can impede gripper control. The only URCaps on the controller should be the ***externalcontrol-x.x.x.urcap*** and ***rs485-x.x.x.urcap***.
 
-TODO: add pictures
+<!-- TODO: add pictures -->
 
 ## Power
 - turn on the `MiRco` battery: power switch on the left side of the housing. Wait for the double audio signal
@@ -70,7 +70,7 @@ Create a new program and insert the External Control program node into the progr
 
 There is a program already prepared. To use it load the `home/magisterij/janjericevic/mir100_ur5e_ros` program. 
 
-TODO: rename ur program, screenshot with correct ip
+<!-- TODO: rename ur program, screenshot with correct ip -->
 
 <div >
 <img src="../img/ur_external_control.png" alt="UR external control urcap program"/>
@@ -91,4 +91,4 @@ Plug the power cable to the direct power plug on the left side of `MiRco`'s hous
 - `MiR100`: see [`MiR100` charging instructions](../MiR100/mir_start.md/#mir100-charging-instructions)
 - `MiRco` battery: remove the charger from the `MiRco` battery charging plug
 
-TODO:photos
+<!-- TODO:photos -->
